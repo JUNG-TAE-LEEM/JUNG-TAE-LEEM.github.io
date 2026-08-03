@@ -5,6 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="원광대학교 한의과대학 진단학교실 한의임상중개연구실. 심장질환을 중심으로, 진료 현장에 이미 쌓인 자료에서 한의약 임상근거를 만듭니다. 건강보험 빅데이터 코호트 · 근거 합성 · 일차의료 진료기반연구.">
 <title>원광대학교 한의임상중개연구실</title>
+<link rel="canonical" href="https://jung-tae-leem.github.io/">
+
+<!-- 브라우저 탭 아이콘. `心` 인장이고 scripts/make_brand.py 가 만든다.
+     SVG 가 아니라 PNG 인 이유 — 보는 컴퓨터에 명조 한자가 없으면 글자가 깨진다. -->
+<link rel="icon" href="./assets/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="./assets/icon-180.png">
+<meta name="theme-color" content="#2F6F62">
+
+<!-- 카톡·슬랙·페북에 주소를 붙였을 때 뜨는 미리보기. 없으면 맨 주소만 나온다.
+     og:image 는 **절대주소여야** 한다 — 미리보기를 만드는 쪽은 남의 서버다. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="한의임상중개연구실">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="원광대학교 한의임상중개연구실">
+<meta property="og:description" content="심장질환을 중심으로, 진료 현장에 이미 쌓인 자료에서 한의약 임상근거를 만듭니다. 논문 216편 · 2008–2026.">
+<meta property="og:url" content="https://jung-tae-leem.github.io/">
+<meta property="og:image" content="https://jung-tae-leem.github.io/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- 「이 연구실이 무엇이고 누가 이끄는가」를 검색엔진이 읽는 자리.
+     논문 216편에는 이미 들어 있고(build_pages.py) 홈에만 없었다.
+     **빈 칸은 아예 넣지 않는다** — 빈 값을 넣으면 구조화 데이터 검사에서 경고가 난다. -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ResearchOrganization","@id":"https://jung-tae-leem.github.io/#lab",
+ "name":"한의임상중개연구실",
+ "alternateName":"Translational Clinical Research of Korean Medicine Lab",
+ "url":"https://jung-tae-leem.github.io/",
+ "logo":"https://jung-tae-leem.github.io/assets/icon-180.png",
+ "parentOrganization":{"@type":"CollegeOrUniversity","name":"College of Korean Medicine, Wonkwang University","url":"https://www.wku.ac.kr"},
+ "department":{"@type":"Organization","name":"Department of Diagnostics"},
+ "employee":{"@id":"https://jung-tae-leem.github.io/#pi"}},
+{"@type":"Person","@id":"https://jung-tae-leem.github.io/#pi",
+ "name":"Jungtae Leem","alternateName":"임정태",
+ "jobTitle":"Associate Professor",
+ "affiliation":{"@id":"https://jung-tae-leem.github.io/#lab"},
+ "identifier":"https://orcid.org/0000-0003-3300-5556",
+ "sameAs":["https://orcid.org/0000-0003-3300-5556",
+           "https://scholar.google.com/citations?user=CdtksEUAAAAJ&hl=en",
+           "https://www.researchgate.net/profile/Jungtae-Leem-2",
+           "https://blog.naver.com/julcho"]},
+{"@type":"WebSite","@id":"https://jung-tae-leem.github.io/#site",
+ "url":"https://jung-tae-leem.github.io/",
+ "name":"원광대학교 한의임상중개연구실",
+ "inLanguage":["ko","en"],
+ "publisher":{"@id":"https://jung-tae-leem.github.io/#lab"}}
+]}
+</script>
 
 <!-- 나눔 웹폰트. 방문자 컴퓨터에 나눔이 깔려 있지 않아도 같은 화면이 보인다.
      인터넷이 없으면 아래 --display / --body 스택의 로컬 글꼴로 조용히 떨어진다. -->
@@ -1966,8 +2016,7 @@
     </div>
     <div class="colophon">
       <span>© 2026 TCRKM Lab, Wonkwang University</span>
-      <span>DESIGN MOCKUP</span>
-      <span>Publications via PubMed &amp; Google Scholar</span>
+      <span><span class="ko">서지정보 출처 — Crossref · KCI · 원문</span><span class="en">Bibliographic data from Crossref, KCI and source articles</span></span>
     </div>
   </div>
 </footer>

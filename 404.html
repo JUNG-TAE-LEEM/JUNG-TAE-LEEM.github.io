@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>없는 주소입니다 · 한의임상중개연구실</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.png" sizes="32x32">
+<meta name="theme-color" content="#2F6F62">
+
+<!-- 이 파일은 사람이 손으로 관리한다(빌드 산출물이 아니다).
+     깃헙 페이지는 없는 주소를 만나면 뿌리의 `/404.html` 하나를 보여 준다. 그러므로 —
+     ① 링크를 **뿌리 절대경로(`/pub/`)로 적는다.** `./pub/` 로 적으면 `/pub/int-999/`
+        같은 깊은 주소에서 엉뚱한 곳을 가리킨다.
+     ② 글꼴·색을 이 파일 안에 넣는다. 웹폰트를 기다리게 할 화면이 아니다.
+     ③ `noindex` 를 단다. 검색엔진이 이 페이지를 목록에 넣을 이유가 없다. -->
+<style>
+  :root { --paper:#F4F5F1; --ink:#1C2622; --ink-soft:#5F7069; --ink-mute:#8A9A93;
+          --celadon:#2F6F62; --rule:#E2E4DE; }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper:#121917; --ink:#E4EAE6; --ink-soft:#AFBDB6; --ink-mute:#7E8F87;
+            --celadon:#8FBFAE; --rule:#25302C; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+         padding: 2rem 1.5rem; background: var(--paper); color: var(--ink);
+         font-family: "Nanum Gothic", "Malgun Gothic", "맑은 고딕", sans-serif;
+         line-height: 1.8; -webkit-font-smoothing: antialiased; }
+  main { width: 100%; max-width: 34rem; }
+  .seal { display: inline-grid; place-items: center; width: 3.25rem; height: 3.25rem;
+          border-radius: .75rem; background: var(--celadon); color: var(--paper);
+          font-family: "Nanum Myeongjo", Batang, 바탕, serif; font-size: 1.75rem;
+          line-height: 1; padding-bottom: .1rem; }
+  h1 { font-family: "Nanum Myeongjo", Batang, 바탕, serif; font-weight: 400;
+       font-size: 1.5rem; margin: 1.5rem 0 .5rem; letter-spacing: -.01em; }
+  p { margin: 0 0 .35rem; color: var(--ink-soft); font-size: .9375rem; }
+  p.en { color: var(--ink-mute); font-size: .875rem; }
+  ul { list-style: none; padding: 0; margin: 2rem 0 0; border-top: 1px solid var(--rule); }
+  li { border-bottom: 1px solid var(--rule); }
+  a { display: flex; gap: 1rem; align-items: baseline; padding: .9rem .25rem;
+      color: var(--celadon); text-decoration: none; font-size: .9375rem; }
+  a:hover { background: color-mix(in srgb, var(--celadon) 8%, transparent); }
+  a span { color: var(--ink-mute); font-size: .8125rem; }
+  footer { margin-top: 2rem; font-size: .75rem; color: var(--ink-mute); }
+</style>
+</head>
+<body>
+<main>
+  <span class="seal" aria-hidden="true">心</span>
+  <h1>없는 주소입니다</h1>
+  <p>주소가 바뀌었거나, 처음부터 없던 자리입니다.</p>
+  <p class="en">This page does not exist. The address may have changed.</p>
+
+  <ul>
+    <li><a href="/">연구실 홈 <span>Home</span></a></li>
+    <li><a href="/pub/">논문 전체 목록 216편 <span>All 216 publications</span></a></li>
+    <li><a href="/camp/">원광한의리서치캠프 <span>Research Camp</span></a></li>
+  </ul>
+
+  <footer>© 2026 TCRKM Lab, Wonkwang University</footer>
+</main>
+</body>
+</html>
