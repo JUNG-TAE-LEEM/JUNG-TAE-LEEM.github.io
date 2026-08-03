@@ -47,6 +47,27 @@
     color: var(--decoct); border: 1px solid var(--decoct); border-radius: 2px;
     padding: 0 .3rem; margin-left: .25rem; vertical-align: .08em; }
   .cnote { font-size: .8125rem; color: var(--ink-mute); margin: 0 0 1.2rem; }
+
+  /* 미래인재상 목록. 왼쪽에 연도·회차, 오른쪽에 상 등급·이름·소속·논문.
+     좁은 화면에서는 한 줄로 접힌다 — 논문 목록과 같은 짜임이다. */
+  .awlist { list-style: none; padding: 0; margin: 0; }
+  .awlist li { display: grid; gap: .15rem .9rem; padding-block: .85rem;
+               border-top: 1px solid var(--rule-soft); }
+  .awlist li:last-child { border-bottom: 1px solid var(--rule-soft); }
+  @media (min-width: 40rem) { .awlist li { grid-template-columns: 8.5rem 1fr; align-items: baseline; } }
+  .awyear { font-family: var(--mono); font-size: .75rem; color: var(--ink-mute);
+            font-variant-numeric: tabular-nums; }
+  .awgrade { display: inline-block; font-family: var(--mono); font-size: .6875rem;
+             letter-spacing: .04em; color: var(--celadon);
+             border: 1px solid var(--rule); border-radius: 999px;
+             padding: .1rem .45rem; margin-right: .4rem; vertical-align: .05em; }
+  .awname { font-size: .9375rem; font-weight: 700; }
+  .awmeta { display: block; font-size: .75rem; color: var(--ink-mute); margin-top: .2rem; }
+  .awkind { color: var(--celadon); }
+  .awpub { display: block; font-size: .8125rem; margin-top: .3rem;
+           color: var(--ink-soft); text-decoration: none;
+           border-bottom: 1px solid var(--rule); padding-bottom: .1rem; }
+  .awpub:hover { color: var(--celadon); border-bottom-color: currentColor; }
   .cpub { display: flex; gap: .9rem; padding: .8rem 0; border-top: 1px solid var(--rule-soft); }
   .cpub img { width: 3.4rem; height: auto; align-self: flex-start; border: 1px solid var(--rule-soft); border-radius: 2px; }
   .cpub .cp { flex: 1; min-width: 0; }
@@ -108,6 +129,135 @@
       <span><span class="ko">국내학술지 (KCI)</span><span class="en">Korean journals (KCI)</span> <b>19</b></span>
     </p>
   </div>
+
+  <section class="cblock awards" id="awards">
+    <h2><span class="ko">대한한의학회 미래인재상</span><span class="en">Future Talent Awards, Society of Korean Medicine</span> <em><span class="ko">4개 회차 · 14건</span><span class="en">4 rounds · 14 awards</span></em></h2>
+    <p class="cnote"><span class="ko">학회가 낸 역대 수상자 가운데 우리 연구와 이어진 것만 추렸습니다. 수상 연구가 우리 논문인 경우 제목을 눌러 논문으로 갈 수 있습니다.</span><span class="en">Only awards tied to our own studies are listed here. Where the awarded work is one of our papers, the title links to it.</span></p>
+    <ul class="awlist">
+      <li>
+        <span class="awyear">2025년 · 제9회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">구도은 · 송은재</b>
+          <span class="awmeta"><span class="ko">원광대학교</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">리서치캠프</span><span class="en">Research Camp</span></span></span>
+          <a class="awpub" href="../pub/kor-79/">Suggestions for Reporting Items in Case Reports on Traditional Korean Medicine Treatments for Coughs: A Literature Review of Case Studies</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2024년 · 제8회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">김영진 · 박하임</b>
+          <span class="awmeta"><span class="ko">원광대학교 대학원</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">리서치캠프</span><span class="en">Research Camp</span></span></span>
+          <a class="awpub" href="../pub/int-79/">Effectiveness and safety of acupuncture modalities for overweight and obesity treatment: a systematic review and network meta-analysis of RCTs</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2024년 · 제8회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">조나현</b>
+          <span class="awmeta"><span class="ko">원광대학교 대학원</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">연구실</span><span class="en">Lab</span></span></span>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2024년 · 제8회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">전형선</b>
+          <span class="awmeta"><span class="ko">원광대학교 대학원</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">연구실</span><span class="en">Lab</span></span></span>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2024년 · 제8회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">주성준</b>
+          <span class="awmeta"><span class="ko">동신한방병원</span><span class="en">Dongshin Korean Medicine Hospital</span> · <span class="awkind"><span class="ko">연구실</span><span class="en">Lab</span></span></span>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2023년 · 제7회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">우수상</span><span class="en">Excellence</span></span>
+          <b class="awname">박수빈 · 김예지</b>
+          <span class="awmeta"><span class="ko">원광대학교</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">리서치캠프</span><span class="en">Research Camp</span></span></span>
+          <a class="awpub" href="../pub/kor-60/">Network Analysis Using the Established Database (K-herb Network) on Herbal Medicines Used in Clinical Research on Heart Failure</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2023년 · 제7회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">주성준</b>
+          <span class="awmeta"><span class="ko">경희대학교 대학원</span><span class="en">Kyung Hee University</span> · <span class="awkind"><span class="ko">연구실</span><span class="en">Lab</span></span></span>
+          <a class="awpub" href="../pub/int-70/">Hypoglycemic Effect of an Herbal Decoction (Modified Gangsimtang) in a Patient with Severe Type 2 Diabetes Mellitus Refusing Oral Anti-Diabetic Medication: A Case Report</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2022년 · 제6회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">최우수상</span><span class="en">Grand prize</span></span>
+          <b class="awname">강병수</b>
+          <span class="awmeta"><span class="ko">동신대학교 대학원</span><span class="en">Dongshin University</span> · <span class="awkind"><span class="ko">함께 연구한 분</span><span class="en">Collaborator</span></span></span>
+          <a class="awpub" href="../pub/int-49/">Observational study of home-based integrative Korean medicine program to satisfy unmet healthcare needs of persons with disability</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2022년 · 제6회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">우수상</span><span class="en">Excellence</span></span>
+          <b class="awname">전채헌</b>
+          <span class="awmeta"><span class="ko">금산군보건소</span><span class="en">Geumsan County Public Health Center</span> · <span class="awkind"><span class="ko">함께 연구한 분</span><span class="en">Collaborator</span></span></span>
+          <a class="awpub" href="../pub/kor-54/">Effect of Non-contact Korean Medical Treatment for Patients Recovering at Home with Positive Coronavirus Disease 2019 Diagnostic Test Results at a Local Public Health Center : A Retrospective Chart Review</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2022년 · 제6회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">우수상</span><span class="en">Excellence</span></span>
+          <b class="awname">윤소영 · 오지은</b>
+          <span class="awmeta"><span class="ko">원광대학교</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">리서치캠프</span><span class="en">Research Camp</span></span></span>
+          <a class="awpub" href="../pub/int-76/">Systematic Review of Preclinical Studies on the Efficacy and Mechanisms of Herbal Medicines in Post-Myocardial Infarction Heart Failure with Reduced Ejection Fraction</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2022년 · 제6회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">신진영 · 고예림 · 송창진</b>
+          <span class="awmeta"><span class="ko">원광대학교</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">리서치캠프</span><span class="en">Research Camp</span></span></span>
+          <a class="awpub" href="../pub/kor-55/">Presentation on Research Trends and Suggestion for further research and education on Objective Structured Clinical Examination and Clinical Performance Examination in Korean Medicine Education: Scoping Review</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2022년 · 제6회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">박정수</b>
+          <span class="awmeta"><span class="ko">원광대학교</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">리서치캠프</span><span class="en">Research Camp</span></span></span>
+          <a class="awpub" href="../pub/int-72/">Current Research Status and Implication for Further Study of Real-World Data on East Asian Traditional Medicine for Heart Failure: A Scoping Review</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2022년 · 제6회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">위민지 · 김유민</b>
+          <span class="awmeta"><span class="ko">원광대학교</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">리서치캠프</span><span class="en">Research Camp</span></span></span>
+          <a class="awpub" href="../pub/int-69/">Effectiveness and Safety of Fufang Danshen Dripping Pill (Cardiotonic Pill) on Blood Viscosity and Hemorheological Factors for Cardiovascular Event Prevention in Patients with Type 2 Diabetes Mellitus: Systematic Review and Meta-Analysis</a>
+        </span>
+      </li>
+      <li>
+        <span class="awyear">2022년 · 제6회</span>
+        <span class="awbody">
+          <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+          <b class="awname">조현규</b>
+          <span class="awmeta"><span class="ko">원광대학교</span><span class="en">Wonkwang University</span> · <span class="awkind"><span class="ko">리서치캠프</span><span class="en">Research Camp</span></span> · <span class="ko">비연구 부문</span><span class="en">Non-research category</span></span>
+        </span>
+      </li>
+    </ul>
+  </section>
 
   <section class="cblock" id="c5">
     <h2><span class="ko">제5회 원광한의리서치캠프</span><span class="en">5th Wonkwang Korean Medicine Research Camp</span> <em>2026 · <span class="ko">8명</span><span class="en">8 students</span></em><a href="#top">↑ <span class="ko">위로</span><span class="en">Top</span></a></h2>
