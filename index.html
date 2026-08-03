@@ -293,19 +293,22 @@
   .roster { display: grid; gap: 1px; background: var(--rule-soft); border: 1px solid var(--rule-soft); border-radius: 3px; overflow: hidden; }
   @media (min-width: 34rem) { .roster { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 56rem) { .roster { grid-template-columns: repeat(3, 1fr); } }
-  .person { background: var(--paper); padding: 1.1rem 1.15rem; display: flex; gap: .85rem; align-items: center; }
+  /* 세로 카드다 — 정사각형 얼굴이 칸 너비를 다 쓰고 이름이 그 아래 온다
+     (2026-08-04 교수님 지시 — 「가로 세로 3칸 들어가는 정도로 키우자」).
+     사진과 한자 인장이 **같은 정사각형 자리**를 쓰므로 섞여도 줄이 흔들리지 않는다. */
+  .person { background: var(--paper); padding: 1rem; display: flex; flex-direction: column; gap: .8rem; }
+  .mono-avatar, .person .face {
+    width: 100%; height: auto; aspect-ratio: 1;
+    border-radius: 3px; background: var(--glaze-wash);
+  }
+  /* `height: auto` 가 있어야 한다 — `<img>` 의 `height="512"` 속성이 브라우저에서
+     CSS 높이로 먹어 `aspect-ratio` 를 눌러 버린다. 빼면 사진만 세로로 길어진다. */
   .mono-avatar {
-    width: 2.3rem; height: 2.3rem; flex: none; border-radius: 50%;
-    background: var(--glaze-wash); color: var(--celadon);
-    display: grid; place-items: center; font-family: var(--display); font-size: .9rem;
+    color: var(--celadon); display: grid; place-items: center;
+    font-family: var(--display); font-size: 4rem;
   }
-  /* 사진을 낸 구성원만 얼굴이 나온다. 한자 인장과 **같은 자리·같은 크기**라
-     한 줄에 사진과 인장이 섞여도 명단이 흔들리지 않는다. */
-  .person .face {
-    width: 2.3rem; height: 2.3rem; flex: none; border-radius: 50%;
-    object-fit: cover; background: var(--glaze-wash);
-  }
-  @media (prefers-color-scheme: dark) { .person .face { filter: brightness(.9); } }
+  .person .face { object-fit: cover; display: block; }
+  @media (prefers-color-scheme: dark) { .person .face { filter: brightness(.88); } }
   .person .nm { font-size: .875rem; font-weight: 600; }
   .person .mt { font-size: .75rem; color: var(--ink-mute); }
   /* 한글 이름 옆의 로마자 표기. 이름은 굵게, 표기는 옅게. */
@@ -1039,11 +1042,11 @@
 
       <div class="roster">
         <div class="person"><span class="mono-avatar" aria-hidden="true">朴</span><div><div class="nm">박다솔</div><div class="mt"><span class="ko">박사과정</span><span class="en">Ph.D. student</span></div></div></div>
-        <div class="person"><img class="face" src="./assets/people/joo-sungjun.webp" width="224" height="224" alt="주성준" loading="lazy"><div><div class="nm">주성준 <span class="rom">Sungjun Joo</span></div><div class="mt"><span class="ko">박사과정</span><span class="en">Ph.D. student</span></div></div></div>
-        <div class="person"><img class="face" src="./assets/people/cho-nahyun.webp" width="224" height="224" alt="조나현" loading="lazy"><div><div class="nm">조나현</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/joo-sungjun.webp" width="512" height="512" alt="주성준" loading="lazy"><div><div class="nm">주성준 <span class="rom">Sungjun Joo</span></div><div class="mt"><span class="ko">박사과정</span><span class="en">Ph.D. student</span></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/cho-nahyun.webp" width="512" height="512" alt="조나현" loading="lazy"><div><div class="nm">조나현</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">安</span><div><div class="nm">안철우</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">金</span><div><div class="nm">김현석</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
-        <div class="person"><img class="face" src="./assets/people/pandey-ayusha.webp" width="224" height="224" alt="Ayusha Pandey" loading="lazy"><div><div class="nm">Ayusha Pandey</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/pandey-ayusha.webp" width="512" height="512" alt="Ayusha Pandey" loading="lazy"><div><div class="nm">Ayusha Pandey</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">沈</span><div><div class="nm">심상송</div><div class="mt"><span class="ko">연구원</span><span class="en">Researcher</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">咸</span><div><div class="nm">함아름</div><div class="mt"><span class="ko">연구행정</span><span class="en">Research administration</span></div></div></div>
       </div>
