@@ -1,0 +1,9 @@
+# 한의임상중개연구실 — https://jung-tae-leem.github.io
+# 사람이 손으로 관리한다(빌드 산출물이 아니다). 주석은 반드시 # 로 단다.
+# 막을 것이 없다 — 배포용 저장소에 나가는 것은 index.html · pub/ · camp/ · assets/ 뿐이고
+# 전부 공개용이다. 내부 기록(DECISIONS.md · data/ · scripts/)은 애초에 올라가지 않는다(16항).
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jung-tae-leem.github.io/sitemap.xml
