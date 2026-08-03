@@ -267,11 +267,13 @@
     border: 1px solid var(--rule-soft); border-radius: 3px;
     box-shadow: var(--shadow); margin-bottom: 2.5rem;
   }
-  @media (min-width: 40rem) { .pi { grid-template-columns: 6rem 1fr; } }
+  /* 사진 자리 6rem → 9rem (2026-08-04 교수님 지시 — 1.5배).
+     아래 `.portrait` 의 `max-width` 와 **같은 값이어야 한다** — 어긋나면 칸에 빈 곳이 생긴다. */
+  @media (min-width: 40rem) { .pi { grid-template-columns: 9rem 1fr; } }
   .portrait {
-    aspect-ratio: 3/4; max-width: 6rem; background: var(--glaze-wash);
+    aspect-ratio: 3/4; max-width: 9rem; background: var(--glaze-wash);
     border-radius: 2px; display: grid; place-items: center;
-    font-family: var(--display); font-size: 1.5rem; color: var(--celadon);
+    font-family: var(--display); font-size: 2.25rem; color: var(--celadon);
   }
   /* 사진이 있으면 인장 대신 들어간다. 없으면 위의 한자 인장 그대로다. */
   img.portrait { width: 100%; height: auto; object-fit: cover; border: 1px solid var(--rule-soft); }
