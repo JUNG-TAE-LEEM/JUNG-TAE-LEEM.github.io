@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benchmark Evaluation of a Tool-Augmented Large Language Model Agent Using Traditional Asian Medicine Metadata · 한의임상중개연구실</title>
+<meta name="description" content="전통 아시아의학 메타데이터를 도구로 붙인 대규모언어모델 에이전트의 벤치마크 평가 연구입니다. 약재·변증·증상·경혈 등 다섯 유형 4780건의 구조화된 정보를 만들고, 네 모델을 기본·검색증강·도구증강 세 조건에서 TCMBench 1300문항과 TCMEval-SDT…">
+<link rel="canonical" href="https://jung-tae-leem.github.io/pub/int-110/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Benchmark Evaluation of a Tool-Augmented Large Language Model Agent Using Traditional Asian Medicine Metadata">
+<meta property="og:description" content="전통 아시아의학 메타데이터를 도구로 붙인 대규모언어모델 에이전트의 벤치마크 평가 연구입니다. 약재·변증·증상·경혈 등 다섯 유형 4780건의 구조화된 정보를 만들고, 네 모델을 기본·검색증강·도구증강 세 조건에서 TCMBench 1300문항과 TCMEval-SDT…">
+<meta property="og:url" content="https://jung-tae-leem.github.io/pub/int-110/">
+<meta property="og:site_name" content="한의임상중개연구실">
+<meta property="og:image" content="https://jung-tae-leem.github.io/assets/thumbs/int-110.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Gothic:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="../../assets/paper.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://jung-tae-leem.github.io/pub/int-110/#article",
+      "name": "Benchmark Evaluation of a Tool-Augmented Large Language Model Agent Using Traditional Asian Medicine Metadata",
+      "headline": "Benchmark Evaluation of a Tool-Augmented Large Language Model Agent Using Traditional Asian Medicine Metadata",
+      "url": "https://jung-tae-leem.github.io/pub/int-110/",
+      "datePublished": "2026",
+      "inLanguage": "en",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Lee WY"
+        },
+        {
+          "@type": "Person",
+          "name": "Kim JH"
+        },
+        {
+          "@type": "Person",
+          "name": "Leem J"
+        },
+        {
+          "@type": "Person",
+          "name": "Lee BW"
+        },
+        {
+          "@type": "Person",
+          "name": "Lee S"
+        },
+        {
+          "@type": "Person",
+          "name": "Kim YW"
+        }
+      ],
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "issueNumber": "7",
+        "isPartOf": {
+          "@type": "PublicationVolume",
+          "volumeNumber": "16",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "Applied Sciences"
+          }
+        }
+      },
+      "pagination": "3377",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.3390/app16073377"
+      },
+      "sameAs": [
+        "https://doi.org/10.3390/app16073377"
+      ],
+      "abstract": "A benchmark evaluation of a tool-augmented large language model agent built on traditional Asian medicine metadata. Structured information comprising 4780 entries across five entity types - herbs, syndromes, symptoms and acupoints among them - was constructed, and four models were compared under baseline, retrieval-augmented and tool-augmented conditions on TCMBench (1300 items) and TCMEval-SDT (600 items). GPT-5-mini gained 4.5 percentage points on TCMBench term-related items, and its agent condition (85.6%) outperformed both retrieval augmentation (77.7%) and baseline (75.4%), so selective, autonomous tool invocation beat fixed retrieval. Claude Sonnet 4.6, by contrast, declined by 0.038 on syndrome differentiation pathogenesis items. Tool usage rates varied from 2% to 87% across models.",
+      "image": "https://jung-tae-leem.github.io/assets/thumbs/int-110.webp"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "한의임상중개연구실",
+          "item": "https://jung-tae-leem.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "논문 전체 목록",
+          "item": "https://jung-tae-leem.github.io/pub/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "INT-110",
+          "item": "https://jung-tae-leem.github.io/pub/int-110/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-type="international">
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="../../index.html">
+      <span class="seal" aria-hidden="true">診</span>
+      <span class="ko">한의임상중개연구실</span>
+      <span class="en">TCRKM Lab</span>
+    </a>
+    <div class="controls">
+      <button class="ctl" id="lang" type="button" aria-label="언어 전환">EN</button>
+      <button class="ctl" id="theme" type="button" aria-label="화면 밝기 전환">◐</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap paper">
+  <nav class="crumb" aria-label="위치">
+    <a href="../../index.html">한의임상중개연구실</a><span>›</span>
+    <a href="../"><span class="ko">논문 전체 목록</span><span class="en">All publications</span></a><span>›</span>
+    INT-110
+  </nav>
+
+  <article>
+    <div class="tags">
+      <span class="pnum"><span class="ko">국제110</span><span class="en">INT-110</span></span>
+      <span class="tag">SCI(E)</span>
+      <span class="tag">2026</span>
+    </div>
+    <h1 class="ptitle">Benchmark Evaluation of a Tool-Augmented Large Language Model Agent Using Traditional Asian Medicine Metadata</h1>
+    <p class="au">Lee WY, Kim JH, <em>Leem J</em>, Lee BW, Lee S, Kim YW</p>
+    <p class="src">Applied Sciences 16(7):3377</p>
+    <p class="plinks"><a href="https://doi.org/10.3390/app16073377" target="_blank" rel="noopener">DOI</a></p>
+
+    <hr class="rule">
+
+    <div class="body">
+      <div>
+        <div class="media"><img class="ph" src="../../assets/thumbs/int-110.webp" alt="" width="600" height="849" decoding="async"></div>
+        <p class="oa"><span class="ko">첫 장 · 오픈액세스</span><span class="en">First page · open access</span></p>
+      </div>
+      <div>
+        <h2 class="sub"><span class="ko">논문 소개</span><span class="en">Summary</span></h2>
+        <div class="sum">
+          <div class="ko">
+            <p>전통 아시아의학 메타데이터를 도구로 붙인 대규모언어모델 에이전트의 벤치마크 평가 연구입니다. 약재·변증·증상·경혈 등 다섯 유형 4780건의 구조화된 정보를 만들고, 네 모델을 기본·검색증강·도구증강 세 조건에서 TCMBench 1300문항과 TCMEval-SDT 600문항으로 견주었습니다. GPT-5-mini는 TCMBench 용어 문항에서 4.5%p 올랐고, 에이전트 조건 85.6%가 검색증강 77.7%와 기본 75.4%를 앞서 고정된 검색보다 스스로 고르는 도구 호출이 나았습니다. 반면 Claude Sonnet 4.6은 변증 병기 항목에서 0.038 떨어졌습니다. 도구 사용률은 모델에 따라 2~87%로 갈렸습니다.</p>
+          </div>
+          <div class="en">
+            <p>A benchmark evaluation of a tool-augmented large language model agent built on traditional Asian medicine metadata. Structured information comprising 4780 entries across five entity types - herbs, syndromes, symptoms and acupoints among them - was constructed, and four models were compared under baseline, retrieval-augmented and tool-augmented conditions on TCMBench (1300 items) and TCMEval-SDT (600 items). GPT-5-mini gained 4.5 percentage points on TCMBench term-related items, and its agent condition (85.6%) outperformed both retrieval augmentation (77.7%) and baseline (75.4%), so selective, autonomous tool invocation beat fixed retrieval. Claude Sonnet 4.6, by contrast, declined by 0.038 on syndrome differentiation pathogenesis items. Tool usage rates varied from 2% to 87% across models.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cite">
+      <h2 class="sub"><span class="ko">인용</span><span class="en">Cite</span></h2>
+      <p class="cite-box">Lee WY, Kim JH, Leem J, Lee BW, Lee S, Kim YW. Benchmark Evaluation of a Tool-Augmented Large Language Model Agent Using Traditional Asian Medicine Metadata. Applied Sciences. 2026;16(7):3377. doi:10.3390/app16073377</p>
+      <button class="copy" type="button"><span class="ko">인용 문장 복사</span><span class="en">Copy citation</span></button>
+    </section>
+
+    <nav class="pnav" aria-label="앞뒤 논문">
+      <a class="prev" href="../../pub/int-111/"><b><span class="ko">이전</span><span class="en">Previous</span> · INT-111</b><span>Effectiveness and Safety of Liuwei Dihuang as an Adjunctive Therapy for Cognitive Impairment: A Systematic Review, Meta-Analysis, and Network Pharmacology Analysis</span></a>
+      <a class="next" href="../../pub/int-109/"><b><span class="ko">다음</span><span class="en">Next</span> · INT-109</b><span>Maimendong-Tang Treatment for Subacute and Chronic Cough in a Primary Care Korean Medicine Clinic</span></a>
+    </nav>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><span class="ko">원광대학교 한의과대학 진단학교실 · 한의임상중개연구실</span><span class="en">Translational Clinical Research of Korean Medicine Lab, Wonkwang University</span><br>
+      <a href="../../index.html#pubs"><span class="ko">논문 목록으로</span><span class="en">Back to publications</span></a></p>
+    <p class="colophon">© 2026 TCRKM Lab · INT-110</p>
+  </div>
+</footer>
+
+<script src="../../assets/paper.js"></script>
+</body>
+</html>
