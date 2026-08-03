@@ -299,6 +299,13 @@
     background: var(--glaze-wash); color: var(--celadon);
     display: grid; place-items: center; font-family: var(--display); font-size: .9rem;
   }
+  /* 사진을 낸 구성원만 얼굴이 나온다. 한자 인장과 **같은 자리·같은 크기**라
+     한 줄에 사진과 인장이 섞여도 명단이 흔들리지 않는다. */
+  .person .face {
+    width: 2.3rem; height: 2.3rem; flex: none; border-radius: 50%;
+    object-fit: cover; background: var(--glaze-wash);
+  }
+  @media (prefers-color-scheme: dark) { .person .face { filter: brightness(.9); } }
   .person .nm { font-size: .875rem; font-weight: 600; }
   .person .mt { font-size: .75rem; color: var(--ink-mute); }
   /* 한글 이름 옆의 로마자 표기. 이름은 굵게, 표기는 옅게. */
@@ -1032,11 +1039,11 @@
 
       <div class="roster">
         <div class="person"><span class="mono-avatar" aria-hidden="true">朴</span><div><div class="nm">박다솔</div><div class="mt"><span class="ko">박사과정</span><span class="en">Ph.D. student</span></div></div></div>
-        <div class="person"><span class="mono-avatar" aria-hidden="true">朱</span><div><div class="nm">주성준 <span class="rom">Sungjun Joo</span></div><div class="mt"><span class="ko">박사과정</span><span class="en">Ph.D. student</span></div></div></div>
-        <div class="person"><span class="mono-avatar" aria-hidden="true">曺</span><div><div class="nm">조나현</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/joo-sungjun.webp" width="224" height="224" alt="주성준" loading="lazy"><div><div class="nm">주성준 <span class="rom">Sungjun Joo</span></div><div class="mt"><span class="ko">박사과정</span><span class="en">Ph.D. student</span></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/cho-nahyun.webp" width="224" height="224" alt="조나현" loading="lazy"><div><div class="nm">조나현</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">安</span><div><div class="nm">안철우</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">金</span><div><div class="nm">김현석</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
-        <div class="person"><span class="mono-avatar" aria-hidden="true">A</span><div><div class="nm">Ayusha Pandey</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/pandey-ayusha.webp" width="224" height="224" alt="Ayusha Pandey" loading="lazy"><div><div class="nm">Ayusha Pandey</div><div class="mt"><span class="ko">대학원생</span><span class="en">Graduate student</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">沈</span><div><div class="nm">심상송</div><div class="mt"><span class="ko">연구원</span><span class="en">Researcher</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">咸</span><div><div class="nm">함아름</div><div class="mt"><span class="ko">연구행정</span><span class="en">Research administration</span></div></div></div>
       </div>
