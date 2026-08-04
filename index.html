@@ -311,6 +311,32 @@
   }
   .person .face { object-fit: cover; display: block; }
   @media (prefers-color-scheme: dark) { .person .face { filter: brightness(.88); } }
+  /* 미래인재상 — 눌러 펴는 목록. `<details>` 라 자바스크립트가 없다. */
+  .awfold { margin: 1.1rem 0 0; border-top: 1px solid var(--rule-soft); }
+  .awfold > summary {
+    cursor: pointer; list-style: none; padding: .8rem 0 .75rem;
+    font-family: var(--mono); font-size: .8125rem; letter-spacing: .04em; color: var(--ink-soft);
+  }
+  .awfold > summary::-webkit-details-marker { display: none; }
+  .awfold > summary::before { content: "▸"; color: var(--celadon); margin-right: .5rem; }
+  .awfold[open] > summary::before { content: "▾"; }
+  .awfold > summary:hover { color: var(--celadon); }
+  .awfold > summary b { color: var(--celadon); font-variant-numeric: tabular-nums; }
+  .awmini { list-style: none; padding: 0; margin: 0 0 .6rem; }
+  .awmini li { display: grid; gap: .1rem .9rem; padding-block: .6rem;
+               border-top: 1px solid var(--rule-soft); }
+  @media (min-width: 40rem) { .awmini li { grid-template-columns: 7.5rem 1fr; align-items: baseline; } }
+  .awmini .awyear { font-family: var(--mono); font-size: .72rem; color: var(--ink-mute);
+                    font-variant-numeric: tabular-nums; }
+  .awmini .awgrade { font-family: var(--mono); font-size: .6875rem; color: var(--celadon);
+                     border: 1px solid var(--rule); border-radius: 999px;
+                     padding: .05rem .4rem; margin-right: .35rem; }
+  .awmini b { font-size: .875rem; }
+  .awmini a { display: block; font-size: .78rem; color: var(--ink-mute);
+              text-decoration: none; margin-top: .2rem; }
+  .awmini a:hover { color: var(--celadon); text-decoration: underline; }
+  .awnote { font-size: .72rem; color: var(--ink-mute); margin: 0 0 .9rem; }
+
   .person .nm { font-size: .875rem; font-weight: 600; }
   .person .mt { font-size: .75rem; color: var(--ink-mute); }
   /* 한글 이름 옆의 로마자 표기. 이름은 굵게, 표기는 옅게. */
@@ -1119,10 +1145,106 @@
           <div><dt><span class="ko">연 참여</span><span class="en">Participations</span></dt><dd>56</dd></div>
           <div><dt><span class="ko">실인원</span><span class="en">Students</span></dt><dd>49</dd></div>
           <div><dt><span class="ko">성과 논문</span><span class="en">Papers</span></dt><dd>26</dd></div>
+          <div><dt><span class="ko">미래인재상</span><span class="en">Future Talent Awards</span></dt><dd>18</dd></div>
           <div><dt><span class="ko">SCI(E) 국제학술지</span><span class="en">SCI(E) journals</span></dt><dd>5</dd></div>
           <div><dt><span class="ko">기타 국제학술지</span><span class="en">Other international journals</span></dt><dd>2</dd></div>
           <div><dt><span class="ko">국내학술지 (KCI)</span><span class="en">Korean journals (KCI)</span></dt><dd>19</dd></div>
         </dl>
+        <details class="awfold">
+          <summary><span class="ko">대한한의학회 미래인재상 수상자</span><span class="en">Future Talent Award recipients</span> <b>18</b></summary>
+          <ul class="awmini">
+            <li>
+              <span class="awyear">2025 · 제9회</span>
+              <span>
+                <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+                <b>구도은 · 송은재</b>
+                <a href="./pub/kor-79/">Suggestions for Reporting Items in Case Reports on Traditional Korean Medicine Treatments for Coughs: A Literature Review of Case Studies</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2024 · 제8회</span>
+              <span>
+                <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+                <b>김영진 · 박하임</b>
+                <a href="./pub/int-79/">Effectiveness and safety of acupuncture modalities for overweight and obesity treatment: a systematic review and network meta-analysis of RCTs</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2024 · 제8회</span>
+              <span>
+                <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+                <b>조나현</b>
+                <a href="./pub/int-107/">Modified Saengmaeksan (Shengmai-san) for arterial stiffness in middle-aged women: A feasibility study</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2024 · 제8회</span>
+              <span>
+                <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+                <b>전형선</b>
+                <a href="./pub/int-98/">Association between acupuncture treatment exposure and mortality in patients with heart failure: a nationwide cohort study</a>
+                <a href="./pub/int-113/">Early acupuncture exposure and mortality in older adults with ischemic heart disease: A nationwide cohort study in Korea</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2023 · 제7회</span>
+              <span>
+                <span class="awgrade"><span class="ko">우수상</span><span class="en">Excellence</span></span>
+                <b>박수빈 · 김예지</b>
+                <a href="./pub/kor-60/">Network Analysis Using the Established Database (K-herb Network) on Herbal Medicines Used in Clinical Research on Heart Failure</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2022 · 제6회</span>
+              <span>
+                <span class="awgrade"><span class="ko">최우수상</span><span class="en">Grand prize</span></span>
+                <b>강병수</b>
+                <a href="./pub/int-49/">Observational study of home-based integrative Korean medicine program to satisfy unmet healthcare needs of persons with disability</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2022 · 제6회</span>
+              <span>
+                <span class="awgrade"><span class="ko">우수상</span><span class="en">Excellence</span></span>
+                <b>전채헌</b>
+                <a href="./pub/kor-54/">Effect of Non-contact Korean Medical Treatment for Patients Recovering at Home with Positive Coronavirus Disease 2019 Diagnostic Test Results at a Local Public Health Center : A Retrospective Chart Review</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2022 · 제6회</span>
+              <span>
+                <span class="awgrade"><span class="ko">우수상</span><span class="en">Excellence</span></span>
+                <b>윤소영 · 오지은</b>
+                <a href="./pub/int-76/">Systematic Review of Preclinical Studies on the Efficacy and Mechanisms of Herbal Medicines in Post-Myocardial Infarction Heart Failure with Reduced Ejection Fraction</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2022 · 제6회</span>
+              <span>
+                <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+                <b>신진영 · 고예림 · 송창진</b>
+                <a href="./pub/kor-55/">Presentation on Research Trends and Suggestion for further research and education on Objective Structured Clinical Examination and Clinical Performance Examination in Korean Medicine Education: Scoping Review</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2022 · 제6회</span>
+              <span>
+                <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+                <b>박정수</b>
+                <a href="./pub/int-72/">Current Research Status and Implication for Further Study of Real-World Data on East Asian Traditional Medicine for Heart Failure: A Scoping Review</a>
+              </span>
+            </li>
+            <li>
+              <span class="awyear">2022 · 제6회</span>
+              <span>
+                <span class="awgrade"><span class="ko">미래상</span><span class="en">Future award</span></span>
+                <b>위민지 · 김유민</b>
+                <a href="./pub/int-69/">Effectiveness and Safety of Fufang Danshen Dripping Pill (Cardiotonic Pill) on Blood Viscosity and Hemorheological Factors for Cardiovascular Event Prevention in Patients with Type 2 Diabetes Mellitus: Systematic Review and Meta-Analysis</a>
+              </span>
+            </li>
+          </ul>
+          <p class="awnote"><span class="ko">학회가 낸 역대 수상자 가운데 수상 연구가 우리 논문인 것만 실었습니다. 자세한 내용은 리서치캠프 페이지에 있습니다.</span><span class="en">Only awards whose winning study is one of our own papers are listed. Details are on the Research Camp page.</span></p>
+        </details>
         <nav class="cnav" aria-label="기수로 이동">
           <a href="./camp/#c5">2026<i>8<span class="ko">명</span></i></a>
           <a href="./camp/#c4">2025<i>6<span class="ko">명</span></i></a>
