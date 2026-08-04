@@ -177,10 +177,12 @@
     border-radius: 2px; font-size: .8rem; line-height: 1;
     padding-top: .05rem;
   }
-  nav.sections { display: flex; gap: 1.35rem; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+  nav.sections { display: flex; gap: 1.25rem; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
   nav.sections::-webkit-scrollbar { display: none; }
+  /* 글씨가 작아 눈에 안 띈다는 지적으로 13px → 15px 로 키웠다(2026-08-04 교수님 지시).
+     자리가 좁아지므로 간격을 조금 줄였다 — 어차피 좁은 화면에서는 가로로 밀어 본다. */
   nav.sections a {
-    font-size: .8125rem; color: var(--ink-soft); text-decoration: none; white-space: nowrap;
+    font-size: .9375rem; color: var(--ink-soft); text-decoration: none; white-space: nowrap;
     padding-block: .35rem; border-bottom: 1.5px solid transparent;
     transition: color .16s, border-color .16s;
   }
@@ -321,6 +323,14 @@
   .awcard .yr { color: var(--celadon); }
 
   .person .nm { font-size: .875rem; font-weight: 600; }
+  /* 구성원 소개글과 링크. 본인이 시트에 적어 주신 것만 나온다(`consent` 칸).
+     사진 크기는 그대로 두고 **카드 길이만 늘어난다** — 2026-08-04 교수님 지시. */
+  .person .pbio { font-size: .8125rem; color: var(--ink-soft); line-height: 1.8; margin-top: .15rem; }
+  .person .pbio span span { display: block; }
+  .person .links.plinks { margin-top: .55rem; gap: .3rem; }
+  .person .links.plinks a { font-size: .6875rem; padding: .2rem .55rem; letter-spacing: .02em; }
+  /* **카드는 늘어난 채로 둔다.** `.roster` 는 1px 간격에 배경색을 깔아 칸선을 그리므로
+     `align-items: start` 를 주면 짧은 카드 아래로 배경이 드러나 격자가 깨진다. */
   .person .mt { font-size: .75rem; color: var(--ink-mute); }
   /* 한글 이름 옆의 로마자 표기. 이름은 굵게, 표기는 옅게. */
   .rom { font-weight: 400; color: var(--ink-mute); }
@@ -1053,11 +1063,11 @@
 
       <div class="roster">
         <div class="person"><span class="mono-avatar" aria-hidden="true">朴</span><div><div class="nm">박다솔</div><div class="mt"><span class="ko">전일제 박사과정</span><span class="en">Full-time Ph.D. student</span></div></div></div>
-        <div class="person"><img class="face" src="./assets/people/joo-sungjun.webp" width="512" height="512" alt="주성준" loading="lazy"><div><div class="nm">주성준 <span class="rom">Sungjun Joo</span></div><div class="mt"><span class="ko">비전일제 박사과정</span><span class="en">Part-time Ph.D. student</span></div></div></div>
-        <div class="person"><img class="face" src="./assets/people/cho-nahyun.webp" width="512" height="512" alt="조나현" loading="lazy"><div><div class="nm">조나현</div><div class="mt"><span class="ko">비전일제 박사과정</span><span class="en">Part-time Ph.D. student</span></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/joo-sungjun.webp" width="512" height="512" alt="주성준" loading="lazy"><div><div class="nm">주성준 <span class="rom">Sungjun Joo</span></div><div class="mt"><span class="ko">비전일제 박사과정</span><span class="en">Part-time Ph.D. student</span></div><div class="pbio"><span class="ko"><span>운동을 통한 한의학적 심장재활 연구에 관심이 많습니다.</span> <span>비전공자 중에 제일 AI를 잘 쓰는 사람이 되고 싶습니다.</span></span><span class="en"><span>Interested in exercise-based cardiac rehabilitation in Korean medicine.</span> <span>Hopes to become the best user of AI among those who came from outside the field.</span></span></div><div class="links plinks"><a href="https://orcid.org/0000-0001-5508-502X" target="_blank" rel="noopener">ORCID</a><a href="https://scholar.google.com/citations?user=B91MN60AAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar</a><a href="https://www.researchgate.net/profile/Sungjun-Joo" target="_blank" rel="noopener">ResearchGate</a><a href="mailto:sj.joo.kor@gmail.com">sj.joo.kor@gmail.com</a></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/cho-nahyun.webp" width="512" height="512" alt="조나현" loading="lazy"><div><div class="nm">조나현</div><div class="mt"><span class="ko">비전일제 박사과정</span><span class="en">Part-time Ph.D. student</span></div><div class="links plinks"><a href="https://orcid.org/0009-0008-8164-1331" target="_blank" rel="noopener">ORCID</a><a href="https://www.researchgate.net/profile/Nahyun-Cho-4" target="_blank" rel="noopener">ResearchGate</a><a href="mailto:nullsetyeon95@gmail.com">nullsetyeon95@gmail.com</a></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">安</span><div><div class="nm">안철우</div><div class="mt"><span class="ko">비전일제 박사과정</span><span class="en">Part-time Ph.D. student</span></div></div></div>
-        <div class="person"><span class="mono-avatar" aria-hidden="true">金</span><div><div class="nm">김현석</div><div class="mt"><span class="ko">비전일제 박사과정</span><span class="en">Part-time Ph.D. student</span></div></div></div>
-        <div class="person"><img class="face" src="./assets/people/pandey-ayusha.webp" width="512" height="512" alt="Ayusha Pandey" loading="lazy"><div><div class="nm">Ayusha Pandey</div><div class="mt"><span class="ko">전일제 박사과정</span><span class="en">Full-time Ph.D. student</span></div></div></div>
+        <div class="person"><span class="mono-avatar" aria-hidden="true">金</span><div><div class="nm">김현석</div><div class="mt"><span class="ko">비전일제 박사과정</span><span class="en">Part-time Ph.D. student</span></div><div class="pbio"><span class="ko"><span>동신대학교 한의과대학을 졸업하고 비전일제 대학원 과정에 재학 중입니다.</span></span><span class="en"><span>Graduated from the College of Korean Medicine at Dongshin University and is now a part-time doctoral student.</span></span></div></div></div>
+        <div class="person"><img class="face" src="./assets/people/pandey-ayusha.webp" width="512" height="512" alt="Ayusha Pandey" loading="lazy"><div><div class="nm">Ayusha Pandey</div><div class="mt"><span class="ko">전일제 박사과정</span><span class="en">Full-time Ph.D. student</span></div><div class="pbio"><span class="ko"><span>네팔 트리부반대학교에서 공중보건학 학사 과정을 졸업하였으며 현재 디지털 헬스케어 대학원 과정에 재학 중입니다.</span></span><span class="en"><span>Graduated in public health from Tribhuvan University in Nepal and is now a graduate student in digital healthcare.</span></span></div><div class="links plinks"><a href="mailto:ayushapandey232@gmail.com">ayushapandey232@gmail.com</a></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">沈</span><div><div class="nm">심상송</div><div class="mt"><span class="ko">연구원</span><span class="en">Researcher</span></div></div></div>
         <div class="person"><span class="mono-avatar" aria-hidden="true">咸</span><div><div class="nm">함아름</div><div class="mt"><span class="ko">연구행정</span><span class="en">Research administration</span></div></div></div>
       </div>
