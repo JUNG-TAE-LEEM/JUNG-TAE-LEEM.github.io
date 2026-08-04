@@ -550,8 +550,20 @@
   .glist li { display: grid; gap: .2rem 1.4rem; padding-block: .95rem; border-top: 1px solid var(--rule-soft); }
   @media (min-width: 40rem) { .glist li { grid-template-columns: 10rem 1fr; align-items: baseline; } }
   .glist .gterm { font-family: var(--mono); font-size: .75rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+  /* 「진행 중」만 배지를 단다. 끝난 과제는 바로 위의 기간이 말해 준다 (DECISIONS C5). */
+  .glist .gnow {
+    /* 좁은 화면에서 날짜 옆에 붙으면 밑선이 어긋난다. 늘 제 줄에 둔다 */
+    display: block; width: fit-content; margin-top: .35rem; font-weight: 400;
+    font-family: var(--body); font-size: .6875rem; letter-spacing: .02em;
+    color: var(--celadon); border: 1px solid var(--celadon);
+    border-radius: 999px; padding: .04rem .45rem;
+  }
   .glist .gt { display: block; font-size: .9375rem; }
-  .glist .gmeta { display: block; font-size: .75rem; color: var(--ink-mute); margin-top: .25rem; }
+  .glist .gdesc {
+    display: block; font-size: .8125rem; line-height: 1.75;
+    color: var(--ink-soft); margin-top: .45rem; max-width: 44rem;
+  }
+  .glist .gmeta { display: block; font-size: .75rem; color: var(--ink-mute); margin-top: .5rem; }
 
   /* ─── 소식 ─────────────────────────────────────────── */
   .item { display: grid; gap: .25rem 1.4rem; padding-block: 1rem; border-top: 1px solid var(--rule-soft); }
@@ -563,6 +575,20 @@
   .item .h a { color: inherit; text-decoration: none; }
   .item .h a:hover { color: var(--celadon); text-decoration: underline; text-underline-offset: 3px; }
   .item .d { font-size: .8125rem; color: var(--ink-soft); margin: 0; }
+  /* 소식 사진. **신문 기사 사진은 여기 들어오지 않는다**(DECISIONS 7항 · C6).
+     비율을 정해 두지 않는다 — 행사 사진은 가로세로가 제각각이라 잘라 내면 사람이 잘린다. */
+  .nph { margin: .7rem 0 0; }
+  .nph img {
+    display: block; width: 100%; max-width: 30rem; height: auto;
+    border-radius: 3px; border: 1px solid var(--rule-soft);
+  }
+  .nph figcaption { margin-top: .3rem; font-size: .6875rem; color: var(--ink-mute); }
+  .nph-s img { max-width: 16rem; }
+  /* 어두운 화면에서 사진만 환하게 떠오르지 않게 낮춘다 (썸네일과 같은 방식) */
+  :root[data-theme="dark"] .nph img { filter: brightness(.88); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .nph img { filter: brightness(.88); }
+  }
   /* 지난 소식은 접어 둔다. `<details>` 라 자바스크립트가 없어도 열린다.
      논문 목록에서 JS 를 뺀 것과 같은 이유다(DECISIONS 3항). */
   .newsmore { margin-top: 1.25rem; border-top: 1px solid var(--rule-soft); padding-top: 1rem; }
@@ -1244,9 +1270,10 @@
           </div>
           <ul class="glist gsheet" id="gsheet-rnd">
           <li>
-            <span class="gterm">2025.04 – 2026.12</span>
+            <span class="gterm">2025.04 – 2026.12<b class="gnow"><span class="ko">진행 중</span><span class="en">In progress</span></b></span>
             <span class="gbody">
               <span class="gt"><span class="ko">만성심폐질환(COPD·심방세동·특발성 폐섬유증) 최적 관리를 위한 한의임상진료지침 및 한의표준임상경로 개발 연구</span><span class="en">Development of Korean medicine clinical practice guidelines and standard clinical pathways for the optimal management of chronic cardiopulmonary disease (COPD, atrial fibrillation, idiopathic pulmonary fibrosis)</span></span>
+              <span class="gdesc"><span class="ko">만성폐쇄성폐질환·심방세동·특발성 폐섬유증 세 질환을 두고 한의 임상진료지침과 표준임상경로를 만드는 과제입니다. 무엇을 언제 쓸 것인가를 근거의 수준과 함께 적어 진료 현장이 같은 자리에서 판단하게 하는 것이 목적입니다. 연구실이 오래 다뤄 온 만성호흡기질환과 심장 두 축이 한 과제에서 만납니다.</span><span class="en">Develops Korean medicine clinical practice guidelines and standard clinical pathways for three chronic cardiopulmonary conditions: COPD, atrial fibrillation and idiopathic pulmonary fibrosis. The aim is to set out what to use and when, together with the level of evidence behind each recommendation, so that clinicians decide from the same starting point. Two long-standing lines of the lab, chronic respiratory disease and heart disease, meet in one project.</span></span>
               <span class="gmeta"><span class="ko">보건복지부 · 원광대학교 산학협력단 · 한의약혁신기술개발사업 · 세부연구책임자 · RS-2025-02221762</span><span class="en">Ministry of Health and Welfare · Wonkwang University Industry-Academic Cooperation Foundation · Korean Medicine Innovative Technology Development Programme; sub-project PI · RS-2025-02221762</span></span>
             </span>
           </li>
@@ -1254,13 +1281,15 @@
             <span class="gterm">2024.05 – 2025.04</span>
             <span class="gbody">
               <span class="gt"><span class="ko">소동물 심장질환 실험모델의 최적 한의치료 전략 도출과 치료제 개발을 위한 원스탑 이미징 종합 분석 플랫폼 구축</span><span class="en">A one-stop integrated imaging analysis platform for deriving optimal Korean medicine treatment strategies and developing therapeutics in small-animal cardiac disease models</span></span>
+              <span class="gdesc"><span class="ko">심장질환 소동물 모델에서 한의치료의 효과를 영상으로 확인하는 분석 플랫폼을 세우는 과제입니다. 사람을 대상으로는 답하기 어려운 기전 물음을 실험 쪽에서 받기 위한 기반 작업입니다.</span><span class="en">Builds an imaging-based analysis platform for evaluating Korean medicine treatment in small-animal models of cardiac disease. It provides the experimental footing for mechanistic questions that clinical studies cannot answer directly.</span></span>
               <span class="gmeta"><span class="ko">한국기초과학지원연구원 · 원광대학교 산학협력단 · 신진연구자 인프라지원 · RS-2024-00403500</span><span class="en">Korea Basic Science Institute · Wonkwang University Industry-Academic Cooperation Foundation · Early-career researcher infrastructure support · RS-2024-00403500</span></span>
             </span>
           </li>
           <li>
-            <span class="gterm">2023.07 – 2027.12</span>
+            <span class="gterm">2023.07 – 2027.12<b class="gnow"><span class="ko">진행 중</span><span class="en">In progress</span></b></span>
             <span class="gbody">
               <span class="gt"><span class="ko">염증성 장질환에 대한 탁리소독 한약의 기전 규명 및 최적화를 위한 멀티오믹스·네트워크 약리·문헌 네트워크 분석 연구</span><span class="en">Multi-omics, network pharmacology and literature network analysis to elucidate and optimise the mechanism of Takrisodok herbal medicine for inflammatory bowel disease</span></span>
+              <span class="gdesc"><span class="ko">염증성 장질환에 쓰는 탁리소독 한약이 어떤 경로로 작용하는지를 멀티오믹스·네트워크 약리·문헌 네트워크 세 방향에서 함께 봅니다. 계산으로 후보를 좁히고 실험으로 확인하는 순서는 안면감비탕 연구(국제 52·60)에서 쓴 방식과 같습니다.</span><span class="en">Examines how the herbal formula Takrisodok acts in inflammatory bowel disease, combining multi-omics, network pharmacology and literature network analysis. The sequence of narrowing candidates computationally and then confirming them experimentally follows the approach used in the Anmyungambi studies (INT-52, INT-60).</span></span>
               <span class="gmeta"><span class="ko">한국연구재단 · 원광대학교 산학협력단 · 한의디지털융합기술개발사업 · RS-2023-00261934</span><span class="en">National Research Foundation of Korea · Wonkwang University Industry-Academic Cooperation Foundation · Korean medicine digital convergence technology programme · RS-2023-00261934</span></span>
             </span>
           </li>
@@ -1268,13 +1297,15 @@
             <span class="gterm">2023.04 – 2024.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">심장질환에서 한의치료 효과에 대한 건강보험 자료를 활용한 코호트연구 및 침치료 Responder 예측연구</span><span class="en">Health-insurance claims cohort study of Korean medicine treatment for heart disease and prediction of acupuncture responders</span></span>
+              <span class="gdesc"><span class="ko">건강보험 청구자료로 심장질환에서 한의치료를 받은 사람과 받지 않은 사람의 경과를 견주고, 어떤 환자가 침 치료에 반응하는지를 미리 가려낼 수 있는지 묻는 과제입니다. 심부전과 허혈성심장질환의 전국 코호트 연구(국제 98·113)가 같은 주제에 놓입니다.</span><span class="en">Uses national health-insurance claims to compare outcomes between patients with heart disease who did and did not receive Korean medicine care, and asks whether responders to acupuncture can be identified in advance. Nationwide cohort studies in heart failure and ischaemic heart disease (INT-98, INT-113) sit on the same topic.</span></span>
               <span class="gmeta"><span class="ko">한국보건산업진흥원 · 원광대학교 산학협력단 · 한의의료기술 최적화 임상연구·근거합성연구 · HF23C0063</span><span class="en">Korea Health Industry Development Institute · Wonkwang University Industry-Academic Cooperation Foundation · Clinical and evidence-synthesis research for optimising Korean medicine care · HF23C0063</span></span>
             </span>
           </li>
           <li>
-            <span class="gterm">2022.03 – 2027.02</span>
+            <span class="gterm">2022.03 – 2027.02<b class="gnow"><span class="ko">진행 중</span><span class="en">In progress</span></b></span>
             <span class="gbody">
               <span class="gt"><span class="ko">심부전 한의약 치료의 최적 Regimen과 Responder 예측을 위한 네트워크 분석과 빅데이터 분석을 활용한 중개연구</span><span class="en">Translational research on optimal regimens and responder prediction in Korean medicine treatment for heart failure: network and big-data analysis</span></span>
+              <span class="gdesc"><span class="ko">심부전에서 어떤 한의치료 조합이 가장 나은지, 그리고 누가 그 치료에 반응하는지를 네트워크 분석과 빅데이터 분석으로 함께 묻는 다년 중개연구입니다. 연구실 심장 연구의 뼈대에 해당합니다.</span><span class="en">A multi-year translational project asking which combination of Korean medicine treatments works best in heart failure and who responds to it, using network analysis together with big-data analysis. It forms the backbone of the lab’s cardiac research.</span></span>
               <span class="gmeta"><span class="ko">한국연구재단 · 원광대학교 산학협력단 · 세종펠로우십 · 2022R1C1C2008738</span><span class="en">National Research Foundation of Korea · Wonkwang University Industry-Academic Cooperation Foundation · Sejong Science Fellowship · 2022R1C1C2008738</span></span>
             </span>
           </li>
@@ -1282,6 +1313,7 @@
             <span class="gterm">2020.08 – 2022.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">비만치료에서 마황 부작용을 감소시키는 공공자원(안면감비탕) 기반 신규 한약제제 개발을 위한 네트워크 약리·전임상 및 관찰연구</span><span class="en">Network pharmacology and preclinical and observational research toward a new herbal formula based on a public resource (Anmyeon-gambi-tang) that reduces Ephedra adverse effects in obesity treatment</span></span>
+              <span class="gdesc"><span class="ko">비만 치료에 쓰는 마황의 부작용을 줄이면서 효과는 지키는 처방을 찾는 과제입니다. 네트워크 약리로 기전을 세운 연구(국제 52)와 갈색지방 열생성을 동물에서 확인한 연구(국제 60)가 같은 주제로 이어집니다.</span><span class="en">Seeks a herbal formula that keeps the effect of Ephedra in obesity treatment while reducing its adverse effects. A network pharmacology study of the mechanism (INT-52) and an animal study confirming non-shivering thermogenesis in brown fat (INT-60) continue the same topic.</span></span>
               <span class="gmeta"><span class="ko">한국보건산업진흥원 · 주식회사 씨와이 → 원광대학교 산학협력단 · 혁신형 한의중개연구 · HF20C0017</span><span class="en">Korea Health Industry Development Institute · CY Inc. → Wonkwang University · Innovative Korean medicine translational research programme · HF20C0017</span></span>
             </span>
           </li>
@@ -1289,6 +1321,7 @@
             <span class="gterm">2020.08 – 2021.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">전국 등록장애인의 한의치료에 대한 경제성 평가 및 한의의료 이용현황</span><span class="en">Economic evaluation of Korean medicine treatment and patterns of Korean medicine use among registered people with disabilities nationwide</span></span>
+              <span class="gdesc"><span class="ko">전국 등록장애인이 한의의료를 얼마나, 어떻게 이용하는지와 그 경제성을 살핀 과제입니다. 연구 현황 검토(국내 52), 재택 한의 프로그램 관찰연구(국제 49), 지역사회 돌봄 증례군(국내 89)이 같은 주제를 잇습니다.</span><span class="en">Examines how much and in what way registered people with disabilities nationwide use Korean medicine, together with an economic evaluation. A review of the research landscape (KOR-52), an observational study of a home-based programme (INT-49) and a community-care case series (KOR-89) continue the same topic.</span></span>
               <span class="gmeta"><span class="ko">한국보건산업진흥원 · 주식회사 씨와이 → 원광대학교 산학협력단 · 한의의료기술 최적화 임상연구·근거합성연구 · HF20C0173</span><span class="en">Korea Health Industry Development Institute · CY Inc. → Wonkwang University · Clinical and evidence-synthesis research for optimising Korean medicine care · HF20C0173</span></span>
             </span>
           </li>
@@ -1296,15 +1329,17 @@
             <span class="gterm">2019.06 – 2022.02</span>
             <span class="gbody">
               <span class="gt"><span class="ko">파킨슨병의 통합의료적 관리를 위한 최적치료 전략 도출과 적용에 대한 Real World Practice 기반 중개연구</span><span class="en">Real-world practice-based translational research deriving and applying optimal integrative care strategies for Parkinson's disease</span></span>
+              <span class="gdesc"><span class="ko">파킨슨병에서 실제 진료 자료를 바탕으로 통합의료적 관리 전략을 세우고 적용해 보는 중개연구입니다. 운동기능 메타분석(국제 47), 전국 코호트(국제 91), 청구자료 연구 현황 검토(국내 70)가 같은 주제에 놓입니다.</span><span class="en">A translational project deriving and applying integrative care strategies for Parkinson’s disease from real-world practice data. A meta-analysis on movement function (INT-47), a nationwide cohort study (INT-91) and a review of claims-data research (KOR-70) sit on the same topic.</span></span>
               <span class="gmeta"><span class="ko">한국연구재단 · 동신한방병원 → 주식회사 씨와이 → 원광대학교 산학협력단 · 기본연구 · 2019R1F1A105931012</span><span class="en">National Research Foundation of Korea · Dongshin Korean Medicine Hospital → CY Inc. → Wonkwang University · Basic research grant · 2019R1F1A105931012</span></span>
             </span>
           </li>
           </ul>
           <ul class="glist gsheet" id="gsheet-service">
           <li>
-            <span class="gterm">2026.01 – 2026.12</span>
+            <span class="gterm">2026.01 – 2026.12<b class="gnow"><span class="ko">진행 중</span><span class="en">In progress</span></b></span>
             <span class="gbody">
               <span class="gt"><span class="ko">야간 하지 경련에 대한 건강기능식품 G케어의 유효성 및 안전성에 관한 인체적용시험: 다기관·단일군·전향적 예비연구</span><span class="en">Human trial of the health functional food G-Care for nocturnal leg cramps: a multicentre, single-arm, prospective pilot study</span></span>
+              <span class="gdesc"><span class="ko">밤에 생기는 다리 근육경련에 건강기능식품 G케어가 도움이 되는지, 안전한지를 여러 기관에서 함께 보는 단일군 전향적 예비 인체적용시험입니다.</span><span class="en">A multicentre, single-arm, prospective pilot human trial testing whether the health functional food G-Care helps with nocturnal leg cramps and whether it is safe.</span></span>
               <span class="gmeta"><span class="ko">비체담 · 원광대학교한방병원 · 용역연구</span><span class="en">Bichedam · Wonkwang University Korean Medicine Hospital · Commissioned research</span></span>
             </span>
           </li>
@@ -1312,6 +1347,7 @@
             <span class="gterm">2025.09 – 2025.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">마자인 함유 처방 복용에 따른 혈액 내 THC·CBD 성분 연구</span><span class="en">Blood THC and CBD levels after taking prescriptions containing hemp seed (Cannabis Semen)</span></span>
+              <span class="gdesc"><span class="ko">마자인(대마 씨앗)이 들어간 처방을 복용했을 때 혈액에서 THC·CBD 성분이 검출되는지를 확인한 연구입니다. 한약 안전성 자료의 빈자리를 메우는 성격의 과제입니다.</span><span class="en">Measures whether THC and CBD appear in blood after taking prescriptions that contain hemp seed (Cannabis Semen). The project fills a gap in the safety record of herbal medicine.</span></span>
               <span class="gmeta"><span class="ko">동의대학교 산학협력단 · 원광대학교한방병원 · 용역연구</span><span class="en">Dongeui University Industry-Academic Cooperation Foundation · Wonkwang University Korean Medicine Hospital · Commissioned research</span></span>
             </span>
           </li>
@@ -1319,6 +1355,7 @@
             <span class="gterm">2025.09 – 2026.02</span>
             <span class="gbody">
               <span class="gt"><span class="ko">기침 환자의 맥문동탕 투약에 대한 실제 임상자료 기반 후향적 관찰연구</span><span class="en">Retrospective real-world observational study of Maekmundong-tang in patients with cough</span></span>
+              <span class="gdesc"><span class="ko">일차 한의원에서 아급성·만성 기침에 맥문동탕을 쓴 실제 진료기록을 모아 경과를 살핀 후향적 관찰연구입니다. 같은 주제의 연구가 국제 109 로 나와 있습니다.</span><span class="en">A retrospective observational study collecting real-world clinical records of Maekmundong-tang used for subacute and chronic cough in primary care Korean medicine clinics. A study on the same topic is published as INT-109.</span></span>
               <span class="gmeta"><span class="ko">경희부부한의원 · 원광대학교한방병원 · 내부과제</span><span class="en">Kyung Hee Boobu Korean Medicine Clinic · Wonkwang University Korean Medicine Hospital · Internal project</span></span>
             </span>
           </li>
@@ -1326,6 +1363,7 @@
             <span class="gterm">2024.09 – 2024.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">만성폐쇄성폐질환 환자 대상 추나병행요법의 유효성 및 안전성에 관한 임상연구 심의의뢰서 제출</span><span class="en">Clinical study on the efficacy and safety of adjunctive Chuna manual therapy in patients with chronic obstructive pulmonary disease — IRB submission</span></span>
+              <span class="gdesc"><span class="ko">만성폐쇄성폐질환 환자에게 추나요법을 함께 썼을 때의 유효성과 안전성을 볼 임상연구의 설계를 갖추고 심의 서류를 낸 과제입니다.</span><span class="en">Prepares the design and institutional review submission for a clinical study on the efficacy and safety of adjunctive Chuna manual therapy in patients with COPD.</span></span>
               <span class="gmeta"><span class="ko">경희대학교 산학협력단 · 원광대학교한방병원 · 용역연구</span><span class="en">Kyung Hee University Industry-Academic Cooperation Foundation · Wonkwang University Korean Medicine Hospital · Commissioned research</span></span>
             </span>
           </li>
@@ -1333,6 +1371,7 @@
             <span class="gterm">2023.06 – 2023.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">한의 중재의 천식 치료 및 악화 예방 분석을 위한 청구자료 코드 개발</span><span class="en">Developing claims-data codes to analyse Korean medicine interventions for asthma treatment and exacerbation prevention</span></span>
+              <span class="gdesc"><span class="ko">천식의 치료와 악화 예방에 한의 중재가 어떻게 쓰였는지를 청구자료로 분석하려면 먼저 그 중재를 가려낼 코드가 있어야 합니다. 그 코드 묶음을 만든 과제입니다.</span><span class="en">Analysing how Korean medicine interventions are used for asthma treatment and exacerbation prevention in claims data first requires codes that identify those interventions. This project built that code set.</span></span>
               <span class="gmeta"><span class="ko">경희대학교 산학협력단 · 원광대학교 산학협력단 · 용역연구</span><span class="en">Kyung Hee University Industry-Academic Cooperation Foundation · Wonkwang University Industry-Academic Cooperation Foundation · Commissioned research</span></span>
             </span>
           </li>
@@ -1340,6 +1379,7 @@
             <span class="gterm">2023.06 – 2023.11</span>
             <span class="gbody">
               <span class="gt"><span class="ko">한의건강노화 플랫폼 구축 — Ⅰ</span><span class="en">Building a Korean medicine healthy-ageing platform (I)</span></span>
+              <span class="gdesc"><span class="ko">한의 관점의 건강노화 연구를 담을 자료 기반을 세우는 첫해 과제입니다. 노화 코호트 연구 프로토콜(국제 88)이 같은 주제에서 나왔습니다.</span><span class="en">The first year of building a data platform for Korean medicine research on healthy ageing. A protocol for an ageing cohort study (INT-88) comes from the same topic.</span></span>
               <span class="gmeta"><span class="ko">한국한의학연구원 · 원광대학교 산학협력단 · 용역연구</span><span class="en">Korea Institute of Oriental Medicine · Wonkwang University Industry-Academic Cooperation Foundation · Commissioned research</span></span>
             </span>
           </li>
@@ -1347,6 +1387,7 @@
             <span class="gterm">2023.06 – 2023.11</span>
             <span class="gbody">
               <span class="gt"><span class="ko">한의원 단위 체질네트워크 증례수집</span><span class="en">Case collection through a constitutional-medicine network of Korean medicine clinics</span></span>
+              <span class="gdesc"><span class="ko">여러 한의원을 묶어 체질의학 진료 증례를 모으는 과제입니다. 일차 진료에서의 8체질의학 후향 연구(국제 101)와 기능성 소화불량 증례(국제 99)가 같은 주제에 놓입니다.</span><span class="en">Collects constitutional-medicine cases through a network of Korean medicine clinics. A retrospective study of eight-constitution medicine in primary care (INT-101) and a case report on functional dyspepsia (INT-99) sit on the same topic.</span></span>
               <span class="gmeta"><span class="ko">한국한의학연구원 · 원광대학교 산학협력단 · 용역연구</span><span class="en">Korea Institute of Oriental Medicine · Wonkwang University Industry-Academic Cooperation Foundation · Commissioned research</span></span>
             </span>
           </li>
@@ -1354,6 +1395,7 @@
             <span class="gterm">2022.03 – 2022.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">만성호흡기질환 환자 한의치료 경험에 대한 질적연구 (2차년도)</span><span class="en">Qualitative study on the experience of Korean medicine treatment in patients with chronic respiratory disease (year 2)</span></span>
+              <span class="gdesc"><span class="ko">앞선 1차년도를 이어받은 2차년도 과제입니다. 만성호흡기질환 환자가 한의치료를 어떻게 겪는지를 면담으로 계속 들었고, 같은 주제의 연구가 국제 64 로 나와 있습니다.</span><span class="en">The second year of the preceding project. Interviews continued to record how patients with chronic respiratory disease experience Korean medicine treatment; a study on the same topic is published as INT-64.</span></span>
               <span class="gmeta"><span class="ko">경희대학교 산학협력단 · 원광대학교 산학협력단 · 용역연구</span><span class="en">Kyung Hee University Industry-Academic Cooperation Foundation · Wonkwang University Industry-Academic Cooperation Foundation · Commissioned research</span></span>
             </span>
           </li>
@@ -1361,6 +1403,7 @@
             <span class="gterm">2021.07 – 2021.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">만성호흡기 질환 환자 한의치료 경험에 대한 질적연구</span><span class="en">Qualitative study on the experience of Korean medicine treatment in patients with chronic respiratory disease</span></span>
+              <span class="gdesc"><span class="ko">만성호흡기질환을 앓는 사람이 한의치료를 어떻게 겪는지를 숫자가 아니라 말로 듣는 질적연구의 첫해입니다. 설문으로는 잡히지 않는 치료 경험을 면담으로 모았습니다.</span><span class="en">The first year of a qualitative study listening, in words rather than numbers, to how people with chronic respiratory disease experience Korean medicine treatment. Interviews captured treatment experience that questionnaires do not reach.</span></span>
               <span class="gmeta"><span class="ko">경희대학교 산학협력단 · 원광대학교 산학협력단 · 용역연구</span><span class="en">Kyung Hee University Industry-Academic Cooperation Foundation · Wonkwang University Industry-Academic Cooperation Foundation · Commissioned research</span></span>
             </span>
           </li>
@@ -1368,6 +1411,7 @@
             <span class="gterm">2019.09 – 2020.06</span>
             <span class="gbody">
               <span class="gt"><span class="ko">도침치료 이상반응 증례수집 관찰연구</span><span class="en">Observational study collecting adverse event cases of acupotomy</span></span>
+              <span class="gdesc"><span class="ko">도침 시술에서 실제로 어떤 이상반응이 생기는지를 진료 현장에서 모으는 관찰연구입니다. 전향적 안전성 예비연구(국제 59)와 이상반응 점검표 델파이(국제 81)로 이어지는 도침 안전성 연구의 한가운데에 있습니다.</span><span class="en">An observational study collecting, in everyday practice, the adverse events that actually occur with acupotomy. It sits in the middle of the acupotomy safety line that runs to a prospective safety pilot (INT-59) and a Delphi study for an adverse event checklist (INT-81).</span></span>
               <span class="gmeta"><span class="ko">한국한의학연구원 · 동신한방병원 · 용역연구 · 19105C004</span><span class="en">Korea Institute of Oriental Medicine · Dongshin Korean Medicine Hospital · Commissioned research · 19105C004</span></span>
             </span>
           </li>
@@ -1375,6 +1419,7 @@
             <span class="gterm">2019.04 – 2020.03</span>
             <span class="gbody">
               <span class="gt"><span class="ko">의한의 협진의 장점, 장애요인 파악과 협진 활성화를 위한 질적연구</span><span class="en">Qualitative study on the benefits of and barriers to collaborative practice between conventional and Korean medicine</span></span>
+              <span class="gdesc"><span class="ko">의과와 한의과의 협진이 왜 잘 되고 어디서 막히는지를 현장의 말로 듣는 공공의료정책 연구입니다. 인식·태도 주제범위 문헌고찰(국제 42), 한의사 관점 조사(국제 35), 초점집단 면담(국제 103)이 같은 줄기를 이룹니다.</span><span class="en">A public healthcare policy study listening, in the words of those involved, to what makes collaboration between conventional and Korean medicine work and where it breaks down. A scoping review of perception and attitude (INT-42), a survey of Korean medicine doctors’ views (INT-35) and focus group interviews (INT-103) form the same line.</span></span>
               <span class="gmeta"><span class="ko">국립중앙의료원 · 청연중앙연구소 · 공공의료정책연구 · 19101A001</span><span class="en">National Medical Center · Chung-Yeon Central Institute · Public healthcare policy research · 19101A001</span></span>
             </span>
           </li>
@@ -1382,6 +1427,7 @@
             <span class="gterm">2019.04 – 2019.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">한약의 약인성 간손상 및 신손상 다기관 관찰 임상연구 (서울특별시)</span><span class="en">Multicentre observational study of herbal medicine-induced liver and kidney injury (Seoul)</span></span>
+              <span class="gdesc"><span class="ko">서울 지역 여러 기관에서 한약을 복용한 환자의 간·신 기능 변화를 함께 살핀 관찰 임상연구입니다. 한약 안전성을 진료 현장의 자료로 확인하려는 작업입니다.</span><span class="en">A multicentre observational study following changes in liver and kidney function in patients taking herbal medicine, run across institutions in Seoul. It checks the safety of herbal medicine against data from actual practice.</span></span>
               <span class="gmeta"><span class="ko">한국한의학연구원 · 동신한방병원 · 용역연구 · 19105C001</span><span class="en">Korea Institute of Oriental Medicine · Dongshin Korean Medicine Hospital · Commissioned research · 19105C001</span></span>
             </span>
           </li>
@@ -1389,6 +1435,7 @@
             <span class="gterm">2018.04 – 2018.11</span>
             <span class="gbody">
               <span class="gt"><span class="ko">도침치료 이상반응 설문지 개발</span><span class="en">Development of an adverse event questionnaire for acupotomy</span></span>
+              <span class="gdesc"><span class="ko">도침 이상반응을 무엇을 어떻게 물어 모을 것인가를 정하는 도구 개발 과제입니다. 이 설문이 뒤의 증례수집과 안전성 연구가 딛는 자리가 됩니다. 침구 이상반응 설문 개발(국내 50)이 같은 갈래입니다.</span><span class="en">Develops the instrument that decides what to ask, and how, when collecting adverse events of acupotomy. The questionnaire became the footing for the later case collection and safety studies. The development of an acupuncture and moxibustion adverse event survey (KOR-50) belongs to the same line.</span></span>
               <span class="gmeta"><span class="ko">한국한의학연구원 · 동신한방병원 · 18105C001</span><span class="en">Korea Institute of Oriental Medicine · Dongshin Korean Medicine Hospital · 18105C001</span></span>
             </span>
           </li>
@@ -1396,6 +1443,7 @@
             <span class="gterm">2018.04 – 2018.11</span>
             <span class="gbody">
               <span class="gt"><span class="ko">비만 및 과체중의 안면감비탕 체중감량 효과에 대한 연구</span><span class="en">Study on the weight-loss effect of Anmyeon-gambi-tang in obesity and overweight</span></span>
+              <span class="gdesc"><span class="ko">비만·과체중에서 안면감비탕의 체중감량 효과를 살핀 과제입니다. 2020년의 후속 과제와 국제 52·60 으로 이어지는 축의 출발점입니다.</span><span class="en">Examines the weight-loss effect of Anmyungambi decoction in obesity and overweight. It is the starting point of the line that runs to the 2020 follow-up project and to INT-52 and INT-60.</span></span>
               <span class="gmeta"><span class="ko">한약진흥재단 · 동신한방병원 · 18105C002</span><span class="en">National Development Institute of Korean Medicine · Dongshin Korean Medicine Hospital · 18105C002</span></span>
             </span>
           </li>
@@ -1403,6 +1451,7 @@
             <span class="gterm">2018.01 – 2019.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">어의당한방병원 근거기반의학 학술활동 자문</span><span class="en">Evidence-based medicine academic advisory work for Eouidang Korean Medicine Hospital</span></span>
+              <span class="gdesc"><span class="ko">한방병원의 학술활동을 근거중심의학의 방법으로 자문한 과제입니다. 진료 현장에서 나온 물음을 연구가 다룰 수 있는 형태로 바꾸는 일이 여기에 들어갑니다.</span><span class="en">Advisory work applying evidence-based medicine methods to the academic activities of a Korean medicine hospital. The work included turning questions raised in practice into a form research can address.</span></span>
               <span class="gmeta"><span class="ko">청연의학연구소 · 18002A002</span><span class="en">Chung-Yeon Medical Institute · 18002A002</span></span>
             </span>
           </li>
@@ -1410,6 +1459,7 @@
             <span class="gterm">2017.08 – 2018.02</span>
             <span class="gbody">
               <span class="gt"><span class="ko">생맥산 가감방의 동맥경화 개선효과에 대한 전향적 관찰연구</span><span class="en">Prospective observational study of a modified Saengmaek-san on arteriosclerosis</span></span>
+              <span class="gdesc"><span class="ko">생맥산 가감방을 복용한 사람의 동맥경화 지표가 어떻게 달라지는지를 앞을 보며 관찰한 연구입니다. 고혈압 환자 대상 안전성·유효성 연구(국제 84)와 중년 여성 동맥경직도 실행가능성 시험(국제 107)이 같은 주제로 이어집니다.</span><span class="en">A prospective observational study of how arteriosclerosis measures change in people taking a modified Saengmaek-san. A safety and effectiveness study in hypertensive patients (INT-84) and a feasibility study on arterial stiffness in middle-aged women (INT-107) continue the same topic.</span></span>
               <span class="gmeta"><span class="ko">한약진흥재단 · 동신한방병원 · 2017003</span><span class="en">National Development Institute of Korean Medicine · Dongshin Korean Medicine Hospital · 2017003</span></span>
             </span>
           </li>
@@ -1417,6 +1467,7 @@
             <span class="gterm">2017.08 – 2017.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">임상시험 프로토콜 개발 — 부인과질환</span><span class="en">Clinical trial protocol development — gynaecological disorders</span></span>
+              <span class="gdesc"><span class="ko">부인과질환의 한의 임상시험을 어떻게 설계할 것인가를 프로토콜로 만든 과제입니다. 월경통 한약 연구(국제 15·30)가 같은 주제에 놓입니다.</span><span class="en">Produces protocols setting out how to design Korean medicine clinical trials for gynaecological disorders. Herbal medicine studies on dysmenorrhoea (INT-15, INT-30) sit on the same topic.</span></span>
               <span class="gmeta"><span class="ko">한국한의학연구원 · 동신한방병원 · 2017001</span><span class="en">Korea Institute of Oriental Medicine · Dongshin Korean Medicine Hospital · 2017001</span></span>
             </span>
           </li>
@@ -1424,6 +1475,7 @@
             <span class="gterm">2017.07 – 2018.12</span>
             <span class="gbody">
               <span class="gt"><span class="ko">난임 난소기능저하증 환자 대상 임상 증례 예비 연구</span><span class="en">Preliminary clinical case study in patients with infertility and diminished ovarian reserve</span></span>
+              <span class="gdesc"><span class="ko">난임과 난소기능저하가 있는 환자에서 한의치료의 경과를 증례로 모아 본 예비 연구입니다.</span><span class="en">A preliminary study collecting cases of how patients with infertility and diminished ovarian reserve fare under Korean medicine treatment.</span></span>
               <span class="gmeta"><span class="ko">한국한의학연구원 · 동신한방병원 · 2017002</span><span class="en">Korea Institute of Oriental Medicine · Dongshin Korean Medicine Hospital · 2017002</span></span>
             </span>
           </li>
@@ -1623,7 +1675,7 @@
             </li>
             <li>
               <time datetime="2025-03-17">2025.03.17</time>
-              <span><a href="https://blog.naver.com/julcho/223799892447" target="_blank" rel="noopener">원광한의대, ‘제3회 리서치캠프’ 성료…차세대 한의사과학자 양성 박차 (한의신문 기사)</a><span class="nd"><span class="ko">원광대학교 한의과대학 제3회 리서치캠프를 마쳤습니다. 2024년도에는 교수 여덟 명과 학생 44명이 26개 팀으로 참여했고, 연구실은 대학원생들과 함께 심장질환 증례·문헌연구와 CPX 챗봇 개발 두 갈래로 열두 개 주제를 진행했습니다. 그 가운데 KCI 논문 여섯 편이 출판되었고 나머지는 심사와 투고 단계에 있습니다. 2022년 시작한 이 프로그램은 이제 캡스톤 디자인 교과로 자리를 잡아 가고 있습니다.</span><span class="en">The third Research Camp at College of Korean Medicine, Wonkwang University has concluded. In 2024, eight faculty members and 44 students took part in 26 teams; this laboratory ran twelve projects with its graduate students along two lines - case and literature studies in cardiac disease, and development of a CPX chatbot. Six of them have been published in KCI journals, with the rest under review or in preparation. Begun in 2022, the programme is settling into the curriculum as a capstone design course.</span></span></span>
+              <span><a href="https://blog.naver.com/julcho/223799892447" target="_blank" rel="noopener">원광한의대, ‘제3회 리서치캠프’ 성료…차세대 한의사과학자 양성 박차 (한의신문 기사)</a><span class="nd"><span class="ko">원광대학교 한의과대학 제3회 리서치캠프를 마쳤습니다. 2024년도에는 교수 여덟 명과 학생 44명이 26개 팀으로 참여했고, 연구실은 대학원생들과 함께 심장질환 증례·문헌연구와 CPX 챗봇 개발 두 갈래로 열두 개 주제를 진행했습니다. 그 가운데 KCI 논문 여섯 편이 출판되었고 나머지는 심사와 투고 단계에 있습니다. 2022년 시작한 이 프로그램은 이제 캡스톤 디자인 교과로 자리를 잡아 가고 있습니다.</span><span class="en">The third Research Camp at College of Korean Medicine, Wonkwang University has concluded. In 2024, eight faculty members and 44 students took part in 26 teams; this laboratory ran twelve projects with its graduate students along two lines - case and literature studies in cardiac disease, and development of a CPX chatbot. Six of them have been published in KCI journals, with the rest under review or in preparation. Begun in 2022, the programme is settling into the curriculum as a capstone design course.</span></span><figure class="nph nph-s"><img src="./assets/camp/camp-3.webp" alt="원광한의대, ‘제3회 리서치캠프’ 성료…차세대 한의사과학자 양성 박차" loading="lazy" decoding="async"></figure></span>
             </li>
             <li>
               <time datetime="2025-03-09">2025.03.09</time>
