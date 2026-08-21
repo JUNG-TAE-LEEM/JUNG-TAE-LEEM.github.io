@@ -134,7 +134,7 @@
     color: var(--ink);
     font-family: var(--body);
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     word-break: keep-all;
   }
@@ -154,7 +154,7 @@
   :root[lang="en"] .en { display: revert; }
 
   /* ─── 상단 고지 ────────────────────────────────────── */
-  .notice { background: var(--sunk); border-bottom: 1px solid var(--rule-soft); font-size: .75rem; color: var(--ink-mute); }
+  .notice { background: var(--sunk); border-bottom: 1px solid var(--rule-soft); font-size: .8125rem; color: var(--ink-mute); }
   .notice p { margin: 0; padding-block: .55rem; }
 
   /* ─── 헤더 ─────────────────────────────────────────── */
@@ -167,7 +167,7 @@
   .bar-in { display: flex; align-items: center; gap: 1.5rem; min-height: 3.75rem; }
   .mark {
     display: flex; align-items: center; gap: .55rem;
-    font-family: var(--display); font-size: 1.0625rem;
+    font-family: var(--display); font-size: 1.125rem;
     text-decoration: none; white-space: nowrap;
   }
   .mark .seal {
@@ -182,7 +182,7 @@
   /* 글씨가 작아 눈에 안 띈다는 지적으로 13px → 15px 로 키웠다(2026-08-04 교수님 지시).
      자리가 좁아지므로 간격을 조금 줄였다 — 어차피 좁은 화면에서는 가로로 밀어 본다. */
   nav.sections a {
-    font-size: .9375rem; color: var(--ink-soft); text-decoration: none; white-space: nowrap;
+    font-size: 1rem; color: var(--ink-soft); text-decoration: none; white-space: nowrap;
     padding-block: .35rem; border-bottom: 1.5px solid transparent;
     transition: color .16s, border-color .16s;
   }
@@ -190,7 +190,7 @@
 
   .controls { display: flex; gap: .375rem; flex: none; }
   .ctl {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
     background: transparent; color: var(--ink-soft);
     border: 1px solid var(--rule); border-radius: 999px;
     padding: .3rem .6rem; cursor: pointer;
@@ -203,7 +203,7 @@
   #crackle { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
   .masthead-in { position: relative; padding-block: clamp(3.5rem, 9vw, 6rem) clamp(2.5rem, 6vw, 3.5rem); }
   .eyebrow {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .16em; text-transform: uppercase;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
     color: var(--celadon); margin: 0 0 1.1rem;
   }
   h1 {
@@ -215,10 +215,10 @@
     display: block; font-size: clamp(.9rem, 2.2vw, 1.0625rem);
     color: var(--ink-mute); letter-spacing: .02em; margin-top: .75rem; font-style: italic;
   }
-  .thesis { font-size: 1.0625rem; color: var(--ink-soft); margin: 1.75rem 0 0; max-width: 34rem; }
+  .thesis { font-size: 1.125rem; color: var(--ink-soft); margin: 1.75rem 0 0; max-width: 34rem; }
   .rule-brush { height: 1px; width: 5.5rem; background: linear-gradient(90deg, var(--celadon), transparent); margin: 2.25rem 0 1.5rem; }
   .figures { display: flex; flex-wrap: wrap; gap: 1.6rem 2rem; }
-  .fig dt { font-family: var(--mono); font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-mute); }
+  .fig dt { font-family: var(--mono); font-size: .8125rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-mute); }
   /* 한글 라벨은 고정폭 글꼴이 없어 자간이 벌어져 보인다. 본문 글꼴로 세운다. */
   .fig dt .ko { font-family: var(--body); letter-spacing: .01em; }
   .fig dd { margin: .3rem 0 0; font-family: var(--display); font-size: 1.85rem; line-height: 1; font-variant-numeric: tabular-nums; }
@@ -226,13 +226,13 @@
   .fig dd a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: .1rem;
     transition: border-color .16s, color .16s; }
   .fig dd a:hover { border-color: var(--celadon); color: var(--celadon); }
-  .fig dd span { font-size: .75rem; color: var(--ink-mute); margin-left: .15rem; }
+  .fig dd span { font-size: .8125rem; color: var(--ink-mute); margin-left: .15rem; }
 
   /* ─── 섹션 공통 ────────────────────────────────────── */
   section { padding-block: clamp(3.25rem, 7vw, 4.75rem); border-bottom: 1px solid var(--rule-soft); scroll-margin-top: 4.25rem; }
   .head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.25rem; flex-wrap: wrap; }
   h2 { font-family: var(--display); font-weight: 500; font-size: clamp(1.5rem, 3.4vw, 1.95rem); letter-spacing: -.01em; margin: 0; }
-  .head .note { font-size: .75rem; color: var(--ink-mute); margin-left: auto; font-family: var(--mono); letter-spacing: .03em; }
+  .head .note { font-size: .8125rem; color: var(--ink-mute); margin-left: auto; font-family: var(--mono); letter-spacing: .03em; }
   h3 { font-size: 1rem; margin: 0; letter-spacing: -.005em; }
   p { margin: 0 0 1rem; }
   p:last-child { margin-bottom: 0; }
@@ -249,18 +249,18 @@
   @media (min-width: 62rem) { .areas { grid-template-columns: repeat(3, 1fr); } }
   .area { background: var(--paper); padding: 1.6rem 1.4rem 1.75rem; }
   .area .glyph { font-family: var(--display); font-size: 1.5rem; color: var(--celadon); display: block; margin-bottom: .75rem; line-height: 1; }
-  .area h3 { margin-bottom: .5rem; font-size: .9375rem; }
-  .area p { font-size: .8125rem; color: var(--ink-soft); line-height: 1.6; }
+  .area h3 { margin-bottom: .5rem; font-size: 1rem; }
+  .area p { font-size: .9375rem; color: var(--ink-soft); line-height: 1.8; }
   .area .kw { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .9rem; }
   .kw span {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .03em; color: var(--ink-mute);
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .03em; color: var(--ink-mute);
     border: 1px solid var(--rule); border-radius: 999px; padding: .14rem .5rem;
   }
 
   .settings { display: grid; gap: .5rem; margin-top: 2.5rem; }
-  .settings h3 { font-family: var(--mono); font-size: .8125rem; letter-spacing: .06em; color: var(--ink-soft); font-weight: 400; margin-bottom: .5rem; }
+  .settings h3 { font-family: var(--mono); font-size: .9375rem; letter-spacing: .06em; color: var(--ink-soft); font-weight: 400; margin-bottom: .5rem; }
   .settings ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
-  .settings li { font-size: .75rem; color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 2px; padding: .25rem .6rem; background: var(--surface); }
+  .settings li { font-size: .8125rem; color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 2px; padding: .25rem .6rem; background: var(--surface); }
 
   /* ─── 구성원 ───────────────────────────────────────── */
   .pi {
@@ -283,11 +283,11 @@
   .bio p { margin: 0 0 .55rem; line-height: 1.95; }
   .bio p:last-child { margin-bottom: 0; }
   .pi h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 500; }
-  .pi .role { font-family: var(--mono); font-size: .6875rem; letter-spacing: .09em; text-transform: uppercase; color: var(--celadon); margin: .35rem 0 .9rem; }
-  .pi p { font-size: .9375rem; color: var(--ink-soft); }
+  .pi .role { font-family: var(--mono); font-size: .75rem; letter-spacing: .09em; text-transform: uppercase; color: var(--celadon); margin: .35rem 0 .9rem; }
+  .pi p { font-size: 1rem; color: var(--ink-soft); }
   .links { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.1rem; }
   .links a {
-    font-family: var(--mono); font-size: .75rem; letter-spacing: .04em;
+    font-family: var(--mono); font-size: .8125rem; letter-spacing: .04em;
     border: 1px solid var(--rule); border-radius: 999px; padding: .26rem .7rem;
     text-decoration: none; color: var(--ink-soft);
     transition: border-color .16s, color .16s;
@@ -315,30 +315,30 @@
   @media (prefers-color-scheme: dark) { .person .face { filter: brightness(.88); } }
   /* 기수 칩 위의 이름표. 「2026 8명」이 바로 위 지표의 「미래인재상 수상 18」 옆에 있어
      수상자 수로 읽히던 것을 막는다(2026-08-04). */
-  .cnavlab { font-family: var(--mono); font-size: .75rem; letter-spacing: .04em;
+  .cnavlab { font-family: var(--mono); font-size: .8125rem; letter-spacing: .04em;
              color: var(--ink-mute); margin: 1.1rem 0 .5rem; }
   /* 미래인재상 카드 — 기수 카드와 **같은 뼈대**를 쓰고 왼쪽 색띠만 다르다. */
   /* 음수 여백을 쓰지 않는다 — 왼쪽으로 삐져나와 기수 카드와 폭이 어긋난다. */
   .awcard { border-left: 2px solid var(--celadon); padding-left: .9rem; }
   .awcard .yr { color: var(--celadon); }
 
-  .person .nm { font-size: .875rem; font-weight: 600; }
+  .person .nm { font-size: .9375rem; font-weight: 600; }
   /* 구성원 소개글과 링크. 본인이 시트에 적어 주신 것만 나온다(`consent` 칸).
      사진 크기는 그대로 두고 **카드 길이만 늘어난다** — 2026-08-04 교수님 지시. */
-  .person .pbio { font-size: .8125rem; color: var(--ink-soft); line-height: 1.8; margin-top: .15rem; }
+  .person .pbio { font-size: .9375rem; color: var(--ink-soft); line-height: 1.8; margin-top: .15rem; }
   .person .pbio span span { display: block; }
   .person .links.plinks { margin-top: .55rem; gap: .3rem; }
-  .person .links.plinks a { font-size: .6875rem; padding: .2rem .55rem; letter-spacing: .02em; }
+  .person .links.plinks a { font-size: .75rem; padding: .2rem .55rem; letter-spacing: .02em; }
   /* **카드는 늘어난 채로 둔다.** `.roster` 는 1px 간격에 배경색을 깔아 칸선을 그리므로
      `align-items: start` 를 주면 짧은 카드 아래로 배경이 드러나 격자가 깨진다. */
-  .person .mt { font-size: .75rem; color: var(--ink-mute); }
+  .person .mt { font-size: .8125rem; color: var(--ink-mute); }
   /* 한글 이름 옆의 로마자 표기. 이름은 굵게, 표기는 옅게. */
   .rom { font-weight: 400; color: var(--ink-mute); }
 
   /* ─── 논문 ─────────────────────────────────────────── */
   .filters { display: flex; gap: .375rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
   .chip {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .05em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .05em;
     border: 1px solid var(--rule); background: transparent; color: var(--ink-soft);
     border-radius: 999px; padding: .28rem .7rem; cursor: pointer;
     transition: background .16s, color .16s, border-color .16s;
@@ -353,14 +353,14 @@
   /* 더 보기 — 논문이 200편을 넘어가도 첫 화면은 짧게 유지한다 */
   .more-btn {
     display: block; width: 100%; margin-top: 1.5rem;
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
     background: transparent; border: 1px solid var(--rule); border-radius: 3px;
     color: var(--ink-soft); padding: .75rem; cursor: pointer;
     transition: border-color .16s, color .16s;
   }
   .more-btn:hover { border-color: var(--glaze); color: var(--celadon); }
-  a.more-btn { display: block; text-align: center; text-decoration: none; font-family: var(--mono); font-size: .6875rem; letter-spacing: .06em; }
-  .pubs-lede { font-size: .8125rem; color: var(--ink-mute); margin: 0 0 1.5rem; }
+  a.more-btn { display: block; text-align: center; text-decoration: none; font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; }
+  .pubs-lede { font-size: .9375rem; color: var(--ink-mute); margin: 0 0 1.5rem; }
 
   /* 좁은 화면은 첫 장을 왼쪽에 세우고 연도·본문을 오른쪽에 쌓는다.
      넓어지면 연도 · 첫 장 · 본문 한 줄로 편다. */
@@ -438,7 +438,7 @@
 
   /* 블로그 번호 배지 — 제목 맨 앞에 [국제 15] 처럼 붙는다 */
   .pnum {
-    display: inline-block; font-family: var(--mono); font-size: .6875rem;
+    display: inline-block; font-family: var(--mono); font-size: .75rem;
     letter-spacing: .05em; font-weight: 400; white-space: nowrap;
     color: var(--celadon);
     border: 1px solid color-mix(in srgb, var(--celadon) 40%, transparent);
@@ -461,54 +461,54 @@
   .lede {
     margin: .6rem 0 0; padding-left: .75rem;
     border-left: 2px solid var(--rule-soft);
-    font-size: .8125rem; line-height: 1.8; color: var(--ink-soft);
+    font-size: .9375rem; line-height: 1.8; color: var(--ink-soft);
   }
   .pmore {
     display: inline-block; margin-left: .4rem; white-space: nowrap;
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .05em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .05em;
     color: var(--celadon); text-decoration: none;
   }
   .pmore:hover { text-decoration: underline; text-underline-offset: .2em; }
-  .pub .yr { font-family: var(--mono); font-size: .8125rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; padding-top: .12rem; }
-  .pub .ttl { font-size: .9375rem; font-weight: 600; line-height: 1.5; margin: 0 0 .3rem; }
-  .pub .au { font-size: .8125rem; color: var(--ink-mute); margin: 0 0 .3rem; }
+  .pub .yr { font-family: var(--mono); font-size: .9375rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; padding-top: .12rem; }
+  .pub .ttl { font-size: 1rem; font-weight: 600; line-height: 1.5; margin: 0 0 .3rem; }
+  .pub .au { font-size: .9375rem; color: var(--ink-mute); margin: 0 0 .3rem; }
   .pub .au em { font-style: normal; color: var(--ink); font-weight: 700; }
-  .pub .src { font-family: var(--display); font-style: italic; font-size: .875rem; color: var(--celadon); }
+  .pub .src { font-family: var(--display); font-style: italic; font-size: .9375rem; color: var(--celadon); }
   .pub .doi {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
     border: 1px solid var(--rule); border-radius: 2px; padding: .1rem .42rem;
     margin-left: .5rem; color: var(--ink-mute); text-decoration: none;
     vertical-align: .12em; white-space: nowrap;
   }
   .pub .doi:hover { border-color: var(--glaze); color: var(--celadon); }
-  .more { margin-top: 1.75rem; font-size: .8125rem; color: var(--ink-mute); }
+  .more { margin-top: 1.75rem; font-size: .9375rem; color: var(--ink-mute); }
   .more a { color: var(--celadon); }
 
   /* ─── 빈 자리 ──────────────────────────────────────── */
   .empty {
     border: 1px dashed var(--rule); border-radius: 3px;
     padding: 2rem 1.75rem; background: var(--surface);
-    font-size: .875rem; color: var(--ink-mute); max-width: 40rem;
+    font-size: .9375rem; color: var(--ink-mute); max-width: 40rem;
   }
-  .empty b { display: block; color: var(--ink-soft); font-weight: 600; margin-bottom: .4rem; font-size: .9375rem; }
+  .empty b { display: block; color: var(--ink-soft); font-weight: 600; margin-bottom: .4rem; font-size: 1rem; }
 
   /* ─── 졸업생 ───────────────────────────────────────── */
   .alumni { list-style: none; padding: 0; margin: 0; }
   .alumni li { display: grid; gap: .2rem 1.4rem; padding-block: 1rem; border-top: 1px solid var(--rule-soft); }
   @media (min-width: 40rem) { .alumni li { grid-template-columns: 4rem 1fr; align-items: baseline; } }
   .alumni li:first-child { border-top: 0; }
-  .alumni .yr { font-family: var(--mono); font-size: .8125rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
-  .alumni .who { font-size: .9375rem; font-weight: 600; }
-  .alumni .who small { font-weight: 400; font-size: .75rem; color: var(--ink-mute); margin-left: .5rem; }
+  .alumni .yr { font-family: var(--mono); font-size: .9375rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+  .alumni .who { font-size: 1rem; font-weight: 600; }
+  .alumni .who small { font-weight: 400; font-size: .8125rem; color: var(--ink-mute); margin-left: .5rem; }
   /* 학위논문 제목 · 현 소속. 자료가 들어오면 저절로 붙는 줄이다. */
-  .alumni .det { font-size: .8125rem; color: var(--ink-soft); grid-column: -2 / -1; }
+  .alumni .det { font-size: .9375rem; color: var(--ink-soft); grid-column: -2 / -1; }
 
   /* ─── 연구비 ───────────────────────────────────────── */
   /* 과제명 · 지원기관 · 기간 · 역할까지만 쓴다. 금액 칸은 데이터에도 없다. */
   /* 갈래 이름표. 10px 대문자였던 것을 13px 로 키웠다 — 작아서 안 보인다는
      지적이 있었다(2026-08-02). 자간도 함께 줄여야 한글이 벌어지지 않는다. */
   .gsub {
-    font-family: var(--mono); font-size: .8125rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .9375rem; letter-spacing: .06em;
     color: var(--ink-soft); font-weight: 400;
     margin: 2.25rem 0 .1rem;
   }
@@ -549,32 +549,32 @@
   .glist { list-style: none; padding: 0; margin: 0; }
   .glist li { display: grid; gap: .2rem 1.4rem; padding-block: .95rem; border-top: 1px solid var(--rule-soft); }
   @media (min-width: 40rem) { .glist li { grid-template-columns: 10rem 1fr; align-items: baseline; } }
-  .glist .gterm { font-family: var(--mono); font-size: .75rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+  .glist .gterm { font-family: var(--mono); font-size: .8125rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
   /* 「진행 중」만 배지를 단다. 끝난 과제는 바로 위의 기간이 말해 준다 (DECISIONS C5). */
   .glist .gnow {
     /* 좁은 화면에서 날짜 옆에 붙으면 밑선이 어긋난다. 늘 제 줄에 둔다 */
     display: block; width: fit-content; margin-top: .35rem; font-weight: 400;
-    font-family: var(--body); font-size: .6875rem; letter-spacing: .02em;
+    font-family: var(--body); font-size: .75rem; letter-spacing: .02em;
     color: var(--celadon); border: 1px solid var(--celadon);
     border-radius: 999px; padding: .04rem .45rem;
   }
-  .glist .gt { display: block; font-size: .9375rem; }
+  .glist .gt { display: block; font-size: 1rem; }
   .glist .gdesc {
-    display: block; font-size: .8125rem; line-height: 1.75;
+    display: block; font-size: .9375rem; line-height: 1.85;
     color: var(--ink-soft); margin-top: .45rem; max-width: 44rem;
   }
-  .glist .gmeta { display: block; font-size: .75rem; color: var(--ink-mute); margin-top: .5rem; }
+  .glist .gmeta { display: block; font-size: .8125rem; color: var(--ink-mute); margin-top: .5rem; }
 
   /* ─── 소식 ─────────────────────────────────────────── */
   .item { display: grid; gap: .25rem 1.4rem; padding-block: 1rem; border-top: 1px solid var(--rule-soft); }
   @media (min-width: 40rem) { .item { grid-template-columns: 6rem 1fr; } }
   .item:first-child { border-top: 0; }
-  .item time { font-family: var(--mono); font-size: .75rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; padding-top: .18rem; }
-  .item .h { font-size: .9375rem; font-weight: 600; margin: 0 0 .2rem; }
+  .item time { font-family: var(--mono); font-size: .8125rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; padding-top: .18rem; }
+  .item .h { font-size: 1rem; font-weight: 600; margin: 0 0 .2rem; }
   /* 소식의 제목은 우리 논문 페이지(또는 원문)로 가는 문이다. 링크인 티는 옅게만 낸다. */
   .item .h a { color: inherit; text-decoration: none; }
   .item .h a:hover { color: var(--celadon); text-decoration: underline; text-underline-offset: 3px; }
-  .item .d { font-size: .8125rem; color: var(--ink-soft); margin: 0; }
+  .item .d { font-size: .9375rem; color: var(--ink-soft); margin: 0; }
   /* 소식 사진. **신문 기사 사진은 여기 들어오지 않는다**(DECISIONS 7항 · C6).
      비율을 정해 두지 않는다 — 행사 사진은 가로세로가 제각각이라 잘라 내면 사람이 잘린다. */
   .nph { margin: .7rem 0 0; }
@@ -582,7 +582,7 @@
     display: block; width: 100%; max-width: 30rem; height: auto;
     border-radius: 3px; border: 1px solid var(--rule-soft);
   }
-  .nph figcaption { margin-top: .3rem; font-size: .6875rem; color: var(--ink-mute); }
+  .nph figcaption { margin-top: .3rem; font-size: .75rem; color: var(--ink-mute); }
   .nph-s img { max-width: 16rem; }
   /* 어두운 화면에서 사진만 환하게 떠오르지 않게 낮춘다 (썸네일과 같은 방식) */
   :root[data-theme="dark"] .nph img { filter: brightness(.88); }
@@ -592,16 +592,16 @@
   /* 지난 소식은 접어 둔다. `<details>` 라 자바스크립트가 없어도 열린다.
      논문 목록에서 JS 를 뺀 것과 같은 이유다(DECISIONS 3항). */
   .newsmore { margin-top: 1.25rem; border-top: 1px solid var(--rule-soft); padding-top: 1rem; }
-  .newsmore > summary { cursor: pointer; font-size: .8125rem; color: var(--ink-mute); list-style: none; }
+  .newsmore > summary { cursor: pointer; font-size: .9375rem; color: var(--ink-mute); list-style: none; }
   .newsmore > summary::-webkit-details-marker { display: none; }
   .newsmore > summary::before { content: "▸ "; }
   .newsmore[open] > summary::before { content: "▾ "; }
   .newsmore > summary:hover { color: var(--celadon); }
   .newsmore ul { list-style: none; padding: 0; margin: .9rem 0 0; }
-  .newsmore li { display: grid; gap: .1rem .9rem; padding-block: .38rem; font-size: .8125rem; }
+  .newsmore li { display: grid; gap: .1rem .9rem; padding-block: .38rem; font-size: .9375rem; }
   @media (min-width: 40rem) { .newsmore li { grid-template-columns: 5.5rem 1fr; } }
-  .newsmore time { font-family: var(--mono); font-size: .72rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
-  .newsmore .nd { display: block; margin-top: .3rem; font-size: .78125rem; color: var(--ink-mute); }
+  .newsmore time { font-family: var(--mono); font-size: .8125rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+  .newsmore .nd { display: block; margin-top: .3rem; font-size: .9375rem; color: var(--ink-mute); }
   .newsmore a { color: var(--ink-soft); text-decoration: none; }
   .newsmore a:hover { color: var(--celadon); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -610,7 +610,7 @@
      연구 구역과 읽는 사람이 다르다는 걸 색으로 먼저 알린다. */
   #clinic { --celadon: var(--decoct); --glaze-wash: color-mix(in srgb, var(--decoct) 14%, var(--paper)); }
   #clinic .lead {
-    font-size: 1.0625rem; line-height: 1.75; color: var(--ink-soft);
+    font-size: 1.125rem; line-height: 1.85; color: var(--ink-soft);
     max-width: 36rem; margin-bottom: 2.25rem;
   }
   .clinic-grid { display: grid; gap: 1.75rem; align-items: start; }
@@ -620,18 +620,18 @@
   .official {
     display: block; margin-top: 1.1rem; padding-top: .9rem;
     border-top: 1px solid var(--rule-soft);
-    font-size: .8125rem; color: var(--celadon); text-decoration: none;
+    font-size: .9375rem; color: var(--celadon); text-decoration: none;
   }
   .official:hover { text-decoration: underline; }
 
   /* 특수클리닉 — 병원 공식 명칭이라는 것을 출처 문장으로 먼저 밝힌다. */
   .specialbox { margin-bottom: 2rem; }
-  .specialbox h3 { font-size: .9375rem; margin: 0 0 .4rem; }
-  .specialbox .src-note { font-size: .8125rem; color: var(--ink-mute); margin: 0 0 .8rem; line-height: 1.6; }
+  .specialbox h3 { font-size: 1rem; margin: 0 0 .4rem; }
+  .specialbox .src-note { font-size: .9375rem; color: var(--ink-mute); margin: 0 0 .8rem; line-height: 1.75; }
   .specialbox .src-note a { color: var(--celadon); }
   ul.special { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; }
   ul.special li {
-    font-size: .875rem; color: var(--ink-soft);
+    font-size: .9375rem; color: var(--ink-soft);
     padding-left: .9rem; position: relative;
   }
   ul.special li::before {
@@ -641,7 +641,7 @@
 
   .conditions { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 2rem; }
   .conditions span {
-    font-size: .8125rem; color: var(--ink-soft);
+    font-size: .9375rem; color: var(--ink-soft);
     border: 1px solid var(--rule); border-radius: 999px;
     padding: .3rem .8rem; background: var(--surface);
   }
@@ -649,10 +649,10 @@
     background: var(--surface); border: 1px solid var(--rule-soft);
     border-radius: 3px; padding: 1.35rem; box-shadow: var(--shadow);
   }
-  .visit h3 { font-family: var(--mono); font-size: .8125rem; letter-spacing: .06em; color: var(--ink-soft); font-weight: 400; margin-bottom: .9rem; }
+  .visit h3 { font-family: var(--mono); font-size: .9375rem; letter-spacing: .06em; color: var(--ink-soft); font-weight: 400; margin-bottom: .9rem; }
   .visit dl { margin: 0; display: grid; gap: .7rem; }
-  .visit dt { font-size: .6875rem; color: var(--ink-mute); }
-  .visit dd { margin: .1rem 0 0; font-size: .875rem; }
+  .visit dt { font-size: .75rem; color: var(--ink-mute); }
+  .visit dd { margin: .1rem 0 0; font-size: .9375rem; }
 
   /* 진료 글 · 소식 공용 목록 */
   .postlist { list-style: none; padding: 0; margin: 0; }
@@ -663,11 +663,11 @@
     text-decoration: none; color: inherit;
   }
   @media (min-width: 34rem) { .postlist a, .postlist .noln { grid-template-columns: 5.5rem 1fr; } }
-  .postlist time { font-family: var(--mono); font-size: .75rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; padding-top: .15rem; }
-  .postlist .t { font-size: .9375rem; line-height: 1.5; }
+  .postlist time { font-family: var(--mono); font-size: .8125rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; padding-top: .15rem; }
+  .postlist .t { font-size: 1rem; line-height: 1.5; }
   .postlist a:hover .t { color: var(--celadon); text-decoration: underline; text-underline-offset: 3px; }
   .postlist .src {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
     color: var(--ink-mute); border: 1px solid var(--rule); border-radius: 2px;
     padding: .07rem .38rem; margin-left: .5rem; white-space: nowrap; vertical-align: .12em;
   }
@@ -680,14 +680,14 @@
     display: grid; gap: .6rem;
   }
   .recruit .tag {
-    font-family: var(--mono); font-size: .75rem; letter-spacing: .07em;
+    font-family: var(--mono); font-size: .8125rem; letter-spacing: .07em;
     text-transform: uppercase; color: var(--celadon);
   }
   .recruit h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 500; }
-  .recruit p { font-size: .875rem; color: var(--ink-soft); max-width: 34rem; }
+  .recruit p { font-size: .9375rem; color: var(--ink-soft); max-width: 34rem; }
   .recruit .cta {
     justify-self: start; margin-top: .4rem;
-    font-size: .8125rem; text-decoration: none;
+    font-size: .9375rem; text-decoration: none;
     border: 1px solid var(--celadon); color: var(--celadon);
     border-radius: 999px; padding: .4rem 1rem;
     transition: background .16s, color .16s;
@@ -720,40 +720,40 @@
   }
   .vid:hover .thumb { border-color: var(--glaze); }
   .vid:hover .thumb::before { background: var(--celadon); }
-  .vid .vt { font-size: .875rem; line-height: 1.5; margin-top: .65rem; }
+  .vid .vt { font-size: .9375rem; line-height: 1.5; margin-top: .65rem; }
   .vid:hover .vt { color: var(--celadon); text-decoration: underline; text-underline-offset: 3px; }
-  .vid .vd { font-family: var(--mono); font-size: .6875rem; color: var(--ink-mute); margin-top: .22rem; }
+  .vid .vd { font-family: var(--mono); font-size: .75rem; color: var(--ink-mute); margin-top: .22rem; }
 
   /* 캠프 전체 성과와 기수 칩 — scripts/build_camp.py 가 채운다. */
   .camp-sum { margin: 1.75rem 0 .75rem; }
   /* 이름표가 작아 안 보인다는 지적(2026-08-03). 11px → 13px, 숫자 24px → 32px. */
   .campfig { display: flex; flex-wrap: wrap; gap: 1rem 2.25rem; margin: 0 0 1.25rem; }
   .campfig div { display: flex; flex-direction: column; gap: .2rem; }
-  .campfig dt { font-family: var(--mono); font-size: .8125rem; letter-spacing: .04em; color: var(--ink-soft); }
+  .campfig dt { font-family: var(--mono); font-size: .9375rem; letter-spacing: .04em; color: var(--ink-soft); }
   .campfig dd { margin: 0; font-family: var(--serif); font-size: 2rem; line-height: 1; font-variant-numeric: tabular-nums; }
   .cnav { display: flex; flex-wrap: wrap; gap: .4rem; }
   .cnav a {
-    font-family: var(--mono); font-size: .8125rem; letter-spacing: .04em;
+    font-family: var(--mono); font-size: .9375rem; letter-spacing: .04em;
     border: 1px solid var(--rule); border-radius: 999px; padding: .3rem .8rem;
     color: var(--ink-soft); text-decoration: none; font-variant-numeric: tabular-nums;
   }
   .cnav a:hover { border-color: var(--celadon); color: var(--celadon); }
   .cnav a i { font-style: normal; color: var(--ink-mute); margin-left: .35rem; }
-  .croster { margin: .5rem 0 0; font-size: .875rem; line-height: 1.9; }
+  .croster { margin: .5rem 0 0; font-size: .9375rem; line-height: 1.9; }
   /* 갈래 이름표. 고정폭 글꼴에는 한글이 없어 자간을 주면 「리 서 치 캠 프」로 흩어진다 —
      2항에서 다른 이름표를 고친 것과 같은 이유로 자간을 0 으로 두고 크기를 12px 로 올렸다. */
   .croster > b {
-    display: block; font-family: var(--mono); font-size: .75rem; letter-spacing: 0;
+    display: block; font-family: var(--mono); font-size: .8125rem; letter-spacing: 0;
     color: var(--ink-mute); font-weight: 400; margin-bottom: .1rem;
   }
   .croster .who, .cohort .who { display: inline-block; margin-right: .55rem; }
   .cohort .who b {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: 0; font-weight: 400;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: 0; font-weight: 400;
     color: var(--decoct); border: 1px solid var(--decoct); border-radius: 2px;
     padding: 0 .3rem; margin-left: .2rem; vertical-align: .08em;
   }
   /* 「성과 논문 N편 보기 →」. 옅어서 눈에 안 띈다는 지적으로 굵게·진하게 키웠다(2026-08-04). */
-  .cmore { margin: .85rem 0 0; font-size: .875rem; }
+  .cmore { margin: .85rem 0 0; font-size: .9375rem; }
   .cmore a {
     display: inline-block; font-weight: 700; color: var(--celadon);
     text-decoration: none; border-bottom: 2px solid var(--glaze);
@@ -764,27 +764,27 @@
   .cohort { display: grid; gap: .4rem 1.4rem; padding-block: 1.35rem; border-top: 1px solid var(--rule-soft); }
   @media (min-width: 40rem) { .cohort { grid-template-columns: 5rem 1fr; } }
   .cohort:first-of-type { border-top: 0; }
-  .cohort .yr { font-family: var(--mono); font-size: .8125rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; padding-top: .15rem; }
+  .cohort .yr { font-family: var(--mono); font-size: .9375rem; color: var(--ink-mute); font-variant-numeric: tabular-nums; padding-top: .15rem; }
   /* 연도와 기수가 「20265기」로 붙어 보이던 것을 줄을 갈라 떼어 놓는다(2026-08-03). */
-  .cohort .yr i { display: block; font-style: normal; font-size: .9375rem; color: var(--celadon); margin-top: .1rem; }
-  .cohort h3 { font-size: .9375rem; margin-bottom: .3rem; }
-  .cohort .roster-line { font-size: .8125rem; color: var(--ink-soft); margin: 0 0 .5rem; }
+  .cohort .yr i { display: block; font-style: normal; font-size: 1rem; color: var(--celadon); margin-top: .1rem; }
+  .cohort h3 { font-size: 1rem; margin-bottom: .3rem; }
+  .cohort .roster-line { font-size: .9375rem; color: var(--ink-soft); margin: 0 0 .5rem; }
   .cohort .outputs { list-style: none; padding: 0; margin: 0; display: grid; gap: .25rem; }
-  .cohort .outputs li { font-size: .8125rem; color: var(--ink-soft); padding-left: .9rem; position: relative; }
+  .cohort .outputs li { font-size: .9375rem; color: var(--ink-soft); padding-left: .9rem; position: relative; }
   .cohort .outputs li::before { content: '—'; position: absolute; left: 0; color: var(--ink-mute); }
 
   /* ─── 푸터 ─────────────────────────────────────────── */
   footer { padding-block: 3.5rem 4rem; background: var(--surface); }
   .foot-grid { display: grid; gap: 2.25rem; }
   @media (min-width: 44rem) { .foot-grid { grid-template-columns: 1.3fr 1fr 1fr; } }
-  footer h4 { font-family: var(--mono); font-size: .8125rem; letter-spacing: .06em; color: var(--ink-soft); font-weight: 400; margin: 0 0 .75rem; }
-  footer p, footer li { font-size: .8125rem; color: var(--ink-soft); }
+  footer h4 { font-family: var(--mono); font-size: .9375rem; letter-spacing: .06em; color: var(--ink-soft); font-weight: 400; margin: 0 0 .75rem; }
+  footer p, footer li { font-size: .9375rem; color: var(--ink-soft); }
   footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .35rem; }
   footer ul a { color: var(--celadon); text-decoration: none; }
   footer ul a:hover { text-decoration: underline; }
   .colophon {
     margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule-soft);
-    font-size: .6875rem; color: var(--ink-mute); font-family: var(--mono); letter-spacing: .02em;
+    font-size: .75rem; color: var(--ink-mute); font-family: var(--mono); letter-spacing: .02em;
     display: flex; flex-wrap: wrap; gap: .5rem 1.5rem;
   }
 </style>
@@ -854,10 +854,10 @@
         <div class="fig"><dt><span class="ko">미래인재상 수상</span><span class="en">Future Talent Awards</span></dt>
           <dd><a href="./camp/#awards" data-count="awards">20</a></dd></div>
       </dl>
-      <p style="margin-top:1rem;font-family:var(--mono);font-size:.625rem;letter-spacing:.04em;color:var(--ink-mute)">
+      <p style="margin-top:1rem;font-family:var(--mono);font-size:.75rem;letter-spacing:.04em;color:var(--ink-mute)">
         <span class="ko">인용 지표는 Google Scholar, 2026.08 기준 · 논문 편수는 </span>
         <span class="en">Citation metrics from Google Scholar, August 2026 · publication counts as of </span>
-        <span data-count="updated">2026-08-04</span>
+        <span data-count="updated">2026-08-21</span>
       </p>
       <!-- 연구책임자 프로필. 아래 「구성원」의 PI 링크와 **같은 줄**(data/people.csv)에서 나온다.
            links_top 칸에 적힌 것만 여기에 나온다. 손으로 고치지 않는다. -->
@@ -1098,12 +1098,12 @@
         <div class="person"><span class="mono-avatar" aria-hidden="true">咸</span><div><div class="nm">함아름</div><div class="mt"><span class="ko">연구행정</span><span class="en">Research administration</span></div></div></div>
       </div>
 
-      <p class="prose" style="margin-top:2rem;font-size:.875rem;color:var(--ink-soft)">
+      <p class="prose" style="margin-top:2rem;font-size:.9375rem;color:var(--ink-soft)">
         <span class="ko">직접 환자들과 임상의들을 만나고, 임상의료기관에서 생성되는 자료들을 연구하고 논문으로 남겨서 한의약의 가치를 조망하고, 한의 임상 근거를 구축하는 과정에 관심이 있는 연구자와 임상의 분들의 지원을 환영합니다.</span>
         <span class="en">We welcome researchers and clinicians interested in meeting patients and clinicians directly, studying the data generated in clinical institutions and writing it up — bringing the value of Korean medicine into view and building its clinical evidence base.</span>
       </p>
 
-      <p class="prose" style="margin-top:1.25rem;font-size:.75rem;color:var(--ink-mute)">
+      <p class="prose" style="margin-top:1.25rem;font-size:.8125rem;color:var(--ink-mute)">
         <span class="ko">사진 · 이메일 · ORCID · 구글 스칼라는 본인이 공개에 동의한 구성원만 표시합니다.</span>
         <span class="en">Photos, emails, ORCID and Google Scholar links are shown only for members who consented.</span>
       </p>
@@ -2088,7 +2088,7 @@
           <span class="ko">원광대학교 한의과대학 진단학교실<br>한의임상중개연구실<br>원광대학교한방병원 일원통합의학과</span>
           <span class="en">Translational Clinical Research of Korean Medicine Lab<br>Dept. of Diagnostics, College of Korean Medicine<br>Wonkwang University<br>Il-won Integrated Medicine, Wonkwang University Korean Medicine Hospital</span>
         </p>
-        <p style="font-family:var(--mono);font-size:.75rem;line-height:1.9">
+        <p style="font-family:var(--mono);font-size:.8125rem;line-height:1.9">
           <a href="mailto:julcho0908@wku.ac.kr" style="color:var(--celadon);text-decoration:none">julcho0908@wku.ac.kr</a><br>
           <a href="mailto:julcho@naver.com" style="color:var(--ink-mute);text-decoration:none">julcho@naver.com</a>
         </p>

@@ -68,7 +68,7 @@
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
-    font-family: var(--body); font-size: 16px; line-height: 1.7;
+    font-family: var(--body); font-size: 16px; line-height: 1.8;
     -webkit-font-smoothing: antialiased; word-break: keep-all;
   }
   a { color: inherit; }
@@ -90,16 +90,16 @@
   .bar-in { display: flex; align-items: center; gap: 1rem; min-height: 3.75rem; }
   .mark {
     display: flex; align-items: center; gap: .55rem; text-decoration: none;
-    font-family: var(--display); font-size: 1.0625rem; letter-spacing: .01em;
+    font-family: var(--display); font-size: 1.125rem; letter-spacing: .01em;
   }
   .seal {
     display: grid; place-items: center; width: 1.6rem; height: 1.6rem;
     background: var(--celadon); color: var(--paper); border-radius: 2px;
-    font-size: .8125rem; font-family: var(--display);
+    font-size: .9375rem; font-family: var(--display);
   }
   .controls { margin-left: auto; display: flex; gap: .4rem; }
   .ctl {
-    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .8125rem; letter-spacing: .06em;
     background: transparent; border: 1px solid var(--rule); border-radius: 2px;
     color: var(--ink-mute); padding: .3rem .5rem; cursor: pointer;
     transition: border-color .16s, color .16s;
@@ -108,7 +108,7 @@
 
   /* ─── 길 안내 ──────────────────────────────────────── */
   .crumb {
-    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .8125rem; letter-spacing: .06em;
     color: var(--ink-mute); margin: 2rem 0 1.5rem;
   }
   .crumb a { color: var(--ink-mute); text-decoration: none; }
@@ -119,7 +119,7 @@
   .paper { padding-bottom: 4rem; }
   .tags { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin-bottom: .9rem; }
   .pnum, .tag {
-    display: inline-block; font-family: var(--mono); font-size: .75rem;
+    display: inline-block; font-family: var(--mono); font-size: .8125rem;
     letter-spacing: .06em; white-space: nowrap; border-radius: 2px; padding: .14rem .5rem;
   }
   .pnum {
@@ -135,15 +135,15 @@
     font-size: clamp(1.375rem, 1.1rem + 1.2vw, 1.875rem); line-height: 1.35;
     font-weight: 600; margin: 0 0 .6rem; letter-spacing: -.01em;
   }
-  .palt { font-size: .9375rem; color: var(--ink-soft); margin: 0 0 .9rem; }
-  .au { font-size: .875rem; color: var(--ink-mute); margin: 0 0 .35rem; }
+  .palt { font-size: 1rem; color: var(--ink-soft); margin: 0 0 .9rem; }
+  .au { font-size: .9375rem; color: var(--ink-mute); margin: 0 0 .35rem; }
   .au em { font-style: normal; color: var(--ink); font-weight: 700; }
   .src { font-family: var(--display); font-style: italic; font-size: 1rem; color: var(--celadon); margin: 0; }
   [data-type="domestic"] .src { font-family: var(--body); font-style: normal; }
 
   .plinks { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.1rem 0 0; }
   .plinks a {
-    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .8125rem; letter-spacing: .06em;
     border: 1px solid var(--rule); border-radius: 2px; padding: .28rem .6rem;
     color: var(--ink-soft); text-decoration: none; transition: border-color .16s, color .16s;
   }
@@ -186,31 +186,31 @@
     :root:not([data-theme="light"]) .pcard { filter: brightness(.84) saturate(.92); }
   }
   .oa {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
     color: var(--ink-mute); margin: .5rem 0 0; text-align: center;
   }
 
   /* 세부 카테고리 이름표. 10px 이던 것을 13px 로 키웠다 — 작아서 안 보인다는
      지적이 있었다(2026-08-02). index.html 의 .gsub 와 같은 크기로 맞춘다. */
   h2.sub {
-    font-family: var(--mono); font-size: .8125rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .9375rem; letter-spacing: .06em;
     color: var(--ink-soft); font-weight: 400; margin: 0 0 .8rem;
   }
   /* 소개글은 문단마다 <p> 다. 줄글로 이어 놓으면 눈에 들어오지 않는다.
      문단 사이를 넉넉히 띄우고 줄간격도 본문보다 넓게 잡는다. */
-  .sum p { font-size: .9375rem; line-height: 2; color: var(--ink-soft); margin: 0 0 1.15rem; }
+  .sum p { font-size: 1rem; line-height: 2; color: var(--ink-soft); margin: 0 0 1.15rem; }
   .sum p:first-child { margin-top: 0; }
   .sum p:last-child { margin-bottom: 0; }
-  .nosum { font-size: .875rem; color: var(--ink-mute); line-height: 1.9; margin: 0; }
+  .nosum { font-size: .9375rem; color: var(--ink-mute); line-height: 1.9; margin: 0; }
 
   .cite { margin-top: 2.5rem; }
   .cite-box {
     background: var(--sunk); border-left: 2px solid var(--glaze); border-radius: 0 3px 3px 0;
-    padding: .9rem 1rem; font-size: .8125rem; line-height: 1.8; color: var(--ink-soft);
+    padding: .9rem 1rem; font-size: .9375rem; line-height: 1.8; color: var(--ink-soft);
     word-break: break-word;
   }
   .copy {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .06em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .06em;
     border: 1px solid var(--rule); background: transparent; color: var(--ink-mute);
     border-radius: 2px; padding: .22rem .5rem; margin-top: .6rem; cursor: pointer;
     transition: border-color .16s, color .16s;
@@ -223,10 +223,10 @@
   .lwrap { max-width: 60rem; }
   .lhead { margin: 2rem 0 1.25rem; }
   .lhead h1 { font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2rem); margin: 0 0 .5rem; font-weight: 600; }
-  .lcount { font-family: var(--mono); font-size: .75rem; color: var(--ink-mute); margin: 0; }
+  .lcount { font-family: var(--mono); font-size: .8125rem; color: var(--ink-mute); margin: 0; }
   .ynav { display: flex; flex-wrap: wrap; gap: .375rem; margin: 1.5rem 0 2.5rem; }
   .ynav a {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .04em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .04em;
     border: 1px solid var(--rule); border-radius: 2px; padding: .3rem .55rem;
     color: var(--ink-soft); text-decoration: none; transition: border-color .16s, color .16s;
   }
@@ -239,11 +239,11 @@
     border-bottom: 1px solid var(--rule-soft); padding-bottom: .4rem;
   }
   .yblock h2 em {
-    font-family: var(--mono); font-style: normal; font-size: .75rem;
+    font-family: var(--mono); font-style: normal; font-size: .8125rem;
     letter-spacing: .07em; color: var(--ink-mute);
   }
   .yblock h2 a {
-    margin-left: auto; font-family: var(--mono); font-size: .6875rem;
+    margin-left: auto; font-family: var(--mono); font-size: .75rem;
     letter-spacing: .07em; color: var(--ink-mute); text-decoration: none;
   }
   .yblock h2 a:hover { color: var(--celadon); }
@@ -252,15 +252,15 @@
          border-bottom: 1px solid var(--rule-soft); }
   .row:last-child { border-bottom: 0; }
   .row .num {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .05em; white-space: nowrap;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .05em; white-space: nowrap;
     color: var(--celadon); border: 1px solid color-mix(in srgb, var(--celadon) 40%, transparent);
     border-radius: 2px; padding: .06rem .3rem; align-self: start; margin-top: .22rem;
     text-align: center;
   }
   .row.kor .num { color: var(--decoct); border-color: color-mix(in srgb, var(--decoct) 40%, transparent); }
-  .row a.t { font-size: .875rem; line-height: 1.55; text-decoration: none; }
+  .row a.t { font-size: .9375rem; line-height: 1.55; text-decoration: none; }
   .row a.t:hover { color: var(--celadon); text-decoration: underline; text-underline-offset: .18em; }
-  .row .j { font-family: var(--display); font-style: italic; font-size: .75rem; color: var(--ink-mute); margin: .1rem 0 0; }
+  .row .j { font-family: var(--display); font-style: italic; font-size: .8125rem; color: var(--ink-mute); margin: .1rem 0 0; }
   .row.kor .j { font-family: var(--body); font-style: normal; }
   @media (max-width: 32rem) {
     .row { grid-template-columns: 1fr; }
@@ -277,17 +277,17 @@
   }
   .pnav a:hover { border-color: var(--glaze); }
   .pnav b {
-    display: block; font-family: var(--mono); font-size: .6875rem;
+    display: block; font-family: var(--mono); font-size: .75rem;
     letter-spacing: .07em; color: var(--ink-mute); font-weight: 400; margin-bottom: .35rem;
   }
-  .pnav span { font-size: .8125rem; line-height: 1.6; color: var(--ink-soft); }
+  .pnav span { font-size: .9375rem; line-height: 1.75; color: var(--ink-soft); }
   .pnav .next { text-align: right; }
 
   /* ─── 바닥 ─────────────────────────────────────────── */
   footer { border-top: 1px solid var(--rule-soft); background: var(--surface); padding-block: 2.25rem; }
-  footer p { margin: 0; font-size: .8125rem; color: var(--ink-mute); line-height: 1.9; }
+  footer p { margin: 0; font-size: .9375rem; color: var(--ink-mute); line-height: 1.9; }
   footer a { color: var(--celadon); text-decoration: none; }
   .colophon {
-    font-family: var(--mono); font-size: .6875rem; letter-spacing: .05em;
+    font-family: var(--mono); font-size: .75rem; letter-spacing: .05em;
     color: var(--ink-mute); margin-top: 1.1rem;
   }
