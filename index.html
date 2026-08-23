@@ -2132,15 +2132,19 @@
      푼다. 구성원 넷의 주소가 개인 지메일이라 그냥 두면 그분들이 스팸을 받는다.
      **담장이 아니라 과속방지턱이다** — 브라우저를 띄워 자바스크립트까지 돌리는
      수집기는 여전히 읽는다. 다만 대량 수집기는 거의 다 원문만 훑는다.
-     `data-keep` 이 붙은 것은 딱지(「메일 주세요」)를 그대로 두고 주소만 잇는다. */
+
+     **주소를 화면에 다시 써 넣지 않는다**(2026-08-23 교수님 지적). 예전에는 이 자리에서
+     딱지(「이메일」)를 주소로 바꿔치기해서, 원문에는 없는 주소가 화면에는 그대로 떴다.
+     그러면 자바스크립트를 돌리는 수집기에도 잡히고 지나가는 사람이 눈으로도 긁어 간다.
+     구성원 넷의 주소가 개인 지메일이라 그분들이 스팸을 받는다. 딱지는 딱지로 두고
+     주소는 `href` 와 `title` 에만 넣는다 — 눌러서 메일을 쓰는 데는 아무 지장이 없다. */
   (function () {
     var list = document.querySelectorAll('a.mail');
     for (var i = 0; i < list.length; i++) {
       var a = list[i], addr;
       try { addr = atob(a.getAttribute('data-m')); } catch (e) { continue; }
       a.href = 'mailto:' + addr;
-      if (!a.hasAttribute('data-keep')) a.textContent = addr;
-      else a.title = addr;
+      a.title = addr;
       a.removeAttribute('data-m');
     }
   })();
